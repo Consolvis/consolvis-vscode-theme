@@ -26,15 +26,15 @@ We plan to update this theme and make it better. Your feedback would be valuable
 
 ### TypeScript
 
-![Sample 1](./assets/sample1.png)
+![Sample 1](https://raw.githubusercontent.com/Consolvis/consolvis-vscode-theme/main/assets/sample1.png)
 
-![Sample 2](./assets/sample2.png)
+![Sample 2](https://raw.githubusercontent.com/Consolvis/consolvis-vscode-theme/main/assets/sample2.png)
 
-![Sample 3](./assets/sample3.png)
+![Sample 3](https://raw.githubusercontent.com/Consolvis/consolvis-vscode-theme/main/assets/sample3.png)
 
 ### TSX
 
-![Sample 4](./assets/sample4.png)
+![Sample 4](https://raw.githubusercontent.com/Consolvis/consolvis-vscode-theme/main/assets/sample4.png)
 
 <hr>
 
