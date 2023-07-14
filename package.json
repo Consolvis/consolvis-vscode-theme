@@ -1,0 +1,60 @@
+{
+  "name": "consolvis-vscode-theme",
+  "displayName": "Consolvis Dark Theme",
+  "description": "Our dark theme with orange accents",
+  "version": "0.0.0",
+  "publisher": "Consolvis",
+  "author": "Tobias Steckenborn <tobias.steckenborn@consolvis.de> (https://consolvis.de)",
+  "icon": "./assets/consolvis_logo_dark.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Consolvis/consolvis-vscode-theme"
+  },
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "dark theme",
+    "consolvis theme",
+    "dark orange theme",
+    "dark gray theme",
+    "dark grey theme"
+  ],
+  "module": "index.ts",
+  "type": "module",
+  "contributes": {
+    "themes": [
+      {
+        "label": "Consolvis Dark Theme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/consolvis-dark-theme.json"
+      }
+    ]
+  },
+  "scripts": {
+    "start": "bun ./src/index.ts",
+    "watch": "bun --watch ./src/index.ts",
+    "format": "prettier --write .",
+    "package": "vsce package -o ./themes/consolvis-vscode-theme.vsix",
+    "prepublishOnly": "bun start",
+    "publish": "vsce publish",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "bun start && changeset publish"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "prettier": "3.0.0",
+    "@changesets/changelog-github": "^0.4.8",
+    "@changesets/cli": "^2.26.2",
+    "@types/chroma-js": "^2.4.0",
+    "typescript": "^5.1.6",
+    "chroma-js": "^2.4.2",
+    "@vscode/vsce": "^2.19.0"
+  },
+  "dependencies": {}
+}

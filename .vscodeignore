@@ -1,0 +1,8 @@
+.vscode/**
+.vscode-test/**
+.assets/**
+src/**
+node_modules/**
+.changeset/**
+.gitignore
+vsc-extension-quickstart.md
