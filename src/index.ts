@@ -7,7 +7,7 @@ const darkTheme = {
   colors: {
     // Base colors
     focusBorder: colors.gray[6], // Overall border color for focused elements. This color is only used if not overridden by a component.
-    foreground: colors.gray[5], // Overall foreground color. This color is only used if not overridden by a component.
+    foreground: colors.gray[4], // Overall foreground color. This color is only used if not overridden by a component.
     descriptionForeground: colors.gray[4], // Foreground color for description text providing additional information, for example for a label.
     errorForeground: colors.red[5],
     disabledForeground: colors.gray[6], // Overall foreground for disabled elements.
@@ -826,23 +826,23 @@ const darkTheme = {
     "gitDecoration.submoduleResourceForeground": colors.gray[6],
 
     // Settings Editor colors
-    "settings.headerForeground": colors.gray[8],
+    "settings.headerForeground": colors.gray[4],
     "settings.modifiedItemIndicator": transparency.halfwayTransparency(
       colors.amber[3]
     ),
     "settings.dropdownBackground": colors.gray[8],
-    "settings.dropdownForeground": colors.gray[7],
+    "settings.dropdownForeground": colors.gray[5],
     "settings.dropdownBorder": colors.gray[7],
     "settings.dropdownListBorder": colors.gray[7],
     "settings.checkboxBackground": colors.gray[8],
-    "settings.checkboxForeground": colors.gray[7],
+    "settings.checkboxForeground": colors.gray[5],
     "settings.checkboxBorder": colors.gray[7],
     "settings.rowHoverBackground": colors.gray[7],
     "settings.textInputBackground": colors.gray[8],
-    "settings.textInputForeground": colors.gray[7],
+    "settings.textInputForeground": colors.gray[5],
     "settings.textInputBorder": colors.gray[7],
     "settings.numberInputBackground": colors.gray[8],
-    "settings.numberInputForeground": colors.gray[7],
+    "settings.numberInputForeground": colors.gray[5],
     "settings.numberInputBorder": colors.gray[7],
     "settings.focusedRowBackground": colors.gray[7],
     "settings.focusedRowBorder": colors.accent,
@@ -1009,6 +1009,12 @@ const darkTheme = {
       settings: {
         foreground: colors.gray[7],
         fontStyle: "underline italic",
+      },
+    },
+    {
+      scope: "storage.type",
+      settings: {
+        foreground: colors.gray[4],
       },
     },
     {

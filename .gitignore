@@ -171,3 +171,5 @@ dist
 *.vsix
 
 /themes/consolvis-vscode-theme.vsix
+
+.DS_Store

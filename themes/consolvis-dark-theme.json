@@ -3,7 +3,7 @@
   "type": "dark",
   "colors": {
     "focusBorder": "#4b5563",
-    "foreground": "#6b7280",
+    "foreground": "#9ca3af",
     "descriptionForeground": "#9ca3af",
     "errorForeground": "#ef4444",
     "disabledForeground": "#4b5563",
@@ -548,21 +548,21 @@
     "gitDecoration.ignoredResourceForeground": "#4b5563",
     "gitDecoration.conflictingResourceForeground": "#fcd34d",
     "gitDecoration.submoduleResourceForeground": "#4b5563",
-    "settings.headerForeground": "#1f2937",
+    "settings.headerForeground": "#9ca3af",
     "settings.modifiedItemIndicator": "#fcd34d80",
     "settings.dropdownBackground": "#1f2937",
-    "settings.dropdownForeground": "#374151",
+    "settings.dropdownForeground": "#6b7280",
     "settings.dropdownBorder": "#374151",
     "settings.dropdownListBorder": "#374151",
     "settings.checkboxBackground": "#1f2937",
-    "settings.checkboxForeground": "#374151",
+    "settings.checkboxForeground": "#6b7280",
     "settings.checkboxBorder": "#374151",
     "settings.rowHoverBackground": "#374151",
     "settings.textInputBackground": "#1f2937",
-    "settings.textInputForeground": "#374151",
+    "settings.textInputForeground": "#6b7280",
     "settings.textInputBorder": "#374151",
     "settings.numberInputBackground": "#1f2937",
-    "settings.numberInputForeground": "#374151",
+    "settings.numberInputForeground": "#6b7280",
     "settings.numberInputBorder": "#374151",
     "settings.focusedRowBackground": "#374151",
     "settings.focusedRowBorder": "#fe420d",
@@ -719,6 +719,12 @@
       "settings": {
         "foreground": "#374151",
         "fontStyle": "underline italic"
+      }
+    },
+    {
+      "scope": "storage.type",
+      "settings": {
+        "foreground": "#9ca3af"
       }
     },
     {
