@@ -1,5 +1,11 @@
 # consolvis-vscode-theme
 
+## 0.0.2
+
+### Patch Changes
+
+- c9b38cc: Fixes duplicate entry in the red color palette
+
 ## 0.0.1
 
 ### Patch Changes
