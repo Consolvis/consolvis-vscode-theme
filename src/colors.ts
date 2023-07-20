@@ -94,7 +94,7 @@ export default {
   red: [
     "#fef2f2",
     "#fee2e2",
-    "#fca5a5",
+    "#fecaca",
     "#fca5a5",
     "#f87171",
     "#ef4444",
