@@ -40,3 +40,8 @@ jobs:
           pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
           extensionFile: ./themes/consolvis-vscode-theme.vsix
           registryUrl: https://marketplace.visualstudio.com
+
+      - name: Version Bump
+        if: steps.changesets.outputs.hasChangesets == 'false'
+        # You can do something when a publish should happen.
+        run: bun tag

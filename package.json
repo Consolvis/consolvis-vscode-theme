@@ -43,6 +43,7 @@
     "prepublishOnly": "bun start",
     "publish": "vsce publish",
     "changeset": "changeset",
+    "tag": "changeset tag",
     "version": "changeset version",
     "release": "bun start && changeset publish"
   },
