@@ -1,5 +1,11 @@
 # consolvis-vscode-theme
 
+## 1.0.0
+
+### Major Changes
+
+- [`c03c11e`](https://github.com/Consolvis/consolvis-vscode-theme/commit/c03c11e661a9e4778a1245395d00a46978bc0df4) - Utilizes semantic highlighting and adjust color scheme
+
 ## 0.0.2
 
 ### Patch Changes
