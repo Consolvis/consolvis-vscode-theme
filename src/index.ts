@@ -1,1274 +1,1210 @@
-import colors from "./colors";
+import * as colors from "./colors";
 import transparency from "./transparency";
 
 const darkTheme = {
-  name: "Consolvis Dark Theme",
-  type: "dark",
-  colors: {
-    // Base colors
-    focusBorder: colors.gray[6], // Overall border color for focused elements. This color is only used if not overridden by a component.
-    foreground: colors.gray[4], // Overall foreground color. This color is only used if not overridden by a component.
-    descriptionForeground: colors.gray[4], // Foreground color for description text providing additional information, for example for a label.
-    errorForeground: colors.red[5],
-    disabledForeground: colors.gray[6], // Overall foreground for disabled elements.
-    "widget.border": colors.gray[6], // Border color of widgets such as Find/Replace inside the editor.
-    "widget.shadow": colors.gray[8], // Shadow color of widgets such as Find/Replace inside the editor.
-    "selection.background": colors.gray[7], // Background color of text selections in the workbench.
-    "icon.foreground": colors.gray[4], // The default color for icons in the workbench.
-    "sash.hoverBorder": colors.gray[4], // The hover border color for draggable sashes.
-
-    // Editor colors
-    "editor.background": colors.gray[9], // Editor background color.
-    "editor.foreground": colors.gray[4], // Editor default foreground color.
-    "editorLineNumber.foreground": colors.gray[6], // Color of editor line numbers.
-    "editorLineNumber.activeForeground": colors.gray[5], // Color of the active editor line number.
-    "editorLineNumber.dimmedForeground": colors.gray[5], // Color of the final editor line when editor.renderFinalNewline is set to dimmed.
-    "editorCursor.background": colors.gray[4], // The background color of the editor cursor. Allows customizing the color of a character overlapped by a block cursor.
-    "editorCursor.foreground": colors.accent, // Color of the editor cursor.
-
-    // Window border
-    "window.activeBorder": colors.gray[6], // Border color for the active (focused) window.
-    "window.inactiveBorder": transparency.lowTransparency(colors.gray[6]), // Border color for the inactive (unfocused) windows.
-
-    // Text colors
-    "textBlockQuote.background": colors.gray[8],
-    "textBlockQuote.border": colors.gray[7],
-    "textCodeBlock.background": colors.gray[8],
-    "textLink.activeForeground": colors.accent,
-    "textLink.foreground": colors.gray[3],
-    "textPreformat.foreground": colors.gray[4],
-    "textSeparator.foreground": colors.gray[8],
-
-    // Action colors
-    "toolbar.hoverBackground": colors.gray[7],
-    "toolbar.hoverOutline": colors.gray[3],
-    "toolbar.activeBackground": colors.gray[7],
-
-    // Button control
-    "button.background": colors.gray[8],
-    "button.foreground": colors.gray[3],
-    "button.border": colors.gray[6],
-    "button.separator": colors.gray[10],
-    "button.hoverBackground": colors.gray[8],
-    "button.secondaryForeground": colors.gray[5],
-    "button.secondaryBackground": colors.gray[8],
-    "button.secondaryHoverBackground": colors.gray[7],
-    "checkbox.background": colors.gray[8],
-    "checkbox.foreground": colors.gray[3],
-    "checkbox.border": colors.gray[7],
-    "checkbox.selectBackground": colors.gray[7],
-    "checkbox.selectBorder": colors.gray[7],
-
-    // Dropdown control
-    "dropdown.background": colors.gray[8],
-    "dropdown.listBackground": colors.gray[7],
-    "dropdown.border": colors.gray[7],
-    "dropdown.foreground": colors.gray[3],
-    // Input control
-    "input.background": colors.gray[8],
-    "input.border": colors.gray[7],
-    "input.foreground": colors.gray[3],
-    "input.placeholderForeground": colors.gray[5],
-    "inputOption.activeBackground": colors.gray[7],
-    "inputOption.activeBorder": colors.gray[7],
-    "inputOption.activeForeground": colors.gray[3],
-    "inputOption.hoverBackground": colors.gray[8],
-    "inputValidation.errorBackground": colors.gray[7],
-    "inputValidation.errorForeground": colors.gray[3],
-    "inputValidation.errorBorder": colors.red[5],
-    "inputValidation.infoBackground": colors.gray[7],
-    "inputValidation.infoForeground": colors.gray[3],
-    "inputValidation.infoBorder": colors.lime[4],
-    "inputValidation.warningBackground": colors.gray[7],
-    "inputValidation.warningForeground": colors.gray[3],
-    "inputValidation.warningBorder": colors.amber[3],
-
-    // Scrollbar control
-    "scrollbar.shadow": colors.gray[8],
-    "scrollbarSlider.activeBackground": transparency.lowTransparency(
-      colors.gray[7]
-    ),
-    "scrollbarSlider.background": transparency.lowTransparency(colors.gray[7]),
-    "scrollbarSlider.hoverBackground": transparency.lowTransparency(
-      colors.gray[6]
-    ),
-
-    // Badge
-    "badge.foreground": colors.gray[3],
-    "badge.background": colors.gray[7],
-
-    // Progress bar
-    "progressBar.background": colors.accent,
-
-    // Lists and trees
-    "list.activeSelectionBackground": colors.gray[7],
-    "list.activeSelectionForeground": colors.gray[3],
-    "list.activeSelectionIconForeground": colors.gray[3],
-    "list.dropBackground": colors.gray[7],
-    "list.focusBackground": colors.gray[7],
-    "list.focusForeground": colors.gray[3],
-    "list.focusHighlightForeground": colors.gray[3],
-    "list.focusOutline": colors.gray[4],
-    "list.focusAndSelectionOutline": colors.gray[4],
-    "list.highlightForeground": colors.gray[3],
-    "list.hoverBackground": colors.gray[7],
-    "list.hoverForeground": colors.gray[3],
-    "list.inactiveSelectionBackground": colors.gray[7],
-    "list.inactiveSelectionForeground": colors.gray[3],
-    "list.inactiveSelectionIconForeground": colors.gray[3],
-    "list.inactiveFocusBackground": transparency.semiClearTransparency(
-      colors.accent
-    ),
-    "list.inactiveFocusOutline": transparency.lowTransparency(colors.gray[7]),
-    "list.invalidItemForeground": colors.red[5],
-    "list.errorForeground": colors.red[5],
-    "list.warningForeground": colors.amber[3],
-    "listFilterWidget.background": colors.gray[8],
-    "listFilterWidget.outline": colors.gray[7],
-    "listFilterWidget.noMatchesOutline": colors.red[5],
-    "listFilterWidget.shadow": colors.gray[8],
-    "list.filterMatchBackground": colors.gray[7],
-    "list.filterMatchBorder": colors.gray[7],
-    "list.deemphasizedForeground": colors.gray[5],
-    "tree.indentGuidesStroke": colors.gray[7],
-    "tree.inactiveIndentGuidesStroke": colors.gray[7],
-    "tree.tableColumnsBorder": colors.gray[7],
-    "tree.tableOddRowsBackground": colors.gray[7],
-
-    // Activity Bar
-    "activityBar.background": colors.gray[7],
-    "activityBar.dropBorder": colors.accent,
-    "activityBar.foreground": colors.gray[3],
-    "activityBar.inactiveForeground": colors.gray[5],
-    "activityBar.border": colors.gray[7],
-    "activityBarBadge.background": transparency.lowTransparency(colors.accent),
-    "activityBarBadge.foreground": colors.gray[3],
-    "activityBar.activeBorder": colors.accent,
-    "activityBar.activeBackground": colors.gray[6],
-    "activityBar.activeFocusBorder": colors.gray[6],
-
-    // Profiles
-    "profileBadge.background": colors.accent,
-    "profileBadge.foreground": colors.gray[3],
-
-    // Side Bar
-    "sideBar.background": colors.gray[8],
-    "sideBar.foreground": colors.gray[4],
-    "sideBar.border": colors.gray[7],
-    "sideBar.dropBackground": colors.gray[7],
-    "sideBarTitle.foreground": colors.gray[3],
-    "sideBarSectionHeader.background": colors.gray[7],
-    "sideBarSectionHeader.foreground": colors.gray[3],
-    "sideBarSectionHeader.border": colors.gray[7],
-
-    // Minimap
-    "minimap.findMatchHighlight": colors.accent,
-    "minimap.selectionHighlight": colors.gray[8],
-    "minimap.errorHighlight": colors.red[5],
-    "minimap.warningHighlight": colors.amber[3],
-    "minimap.background": colors.gray[8],
-    "minimap.selectionOccurrenceHighlight": colors.accent,
-    "minimap.foregroundOpacity": "#000000c0",
-    "minimapSlider.background": transparency.halfwayTransparency(
-      colors.gray[8]
-    ),
-    "minimapSlider.hoverBackground": transparency.halfwayTransparency(
-      colors.gray[7]
-    ),
-    "minimapSlider.activeBackground": transparency.semiClearTransparency(
-      colors.gray[7]
-    ),
-    "minimapGutter.addedBackground": transparency.halfwayTransparency(
-      colors.lime[4]
-    ),
-    "minimapGutter.modifiedBackground": transparency.halfwayTransparency(
-      colors.amber[3]
-    ),
-    "minimapGutter.deletedBackground": transparency.halfwayTransparency(
-      colors.red[5]
-    ),
-
-    // Editor Groups & Tabs
-    "editorGroup.border": colors.gray[7],
-    "editorGroup.dropBackground": colors.gray[7],
-    "editorGroupHeader.noTabsBackground": colors.gray[7],
-    "editorGroupHeader.tabsBackground": colors.gray[7],
-    "editorGroupHeader.tabsBorder": colors.gray[7],
-    "editorGroupHeader.border": colors.gray[7],
-    "editorGroup.emptyBackground": colors.gray[7],
-    "editorGroup.focusedEmptyBorder": colors.gray[4],
-    "editorGroup.dropIntoPromptForeground": colors.gray[7],
-    "editorGroup.dropIntoPromptBackground": colors.gray[7],
-    "editorGroup.dropIntoPromptBorder": colors.gray[7],
-    "tab.activeBackground": colors.gray[6],
-    "tab.unfocusedActiveBackground": colors.gray[6],
-    "tab.activeForeground": colors.gray[3],
-    "tab.border": colors.gray[6],
-    "tab.activeBorder": colors.gray[6],
-    "tab.unfocusedActiveBorder": colors.gray[6],
-    "tab.activeBorderTop": colors.accent,
-    "tab.unfocusedActiveBorderTop": colors.accent,
-    "tab.lastPinnedBorder": colors.gray[6],
-    "tab.inactiveBackground": colors.gray[7],
-    "tab.unfocusedInactiveBackground": colors.gray[7],
-    "tab.inactiveForeground": colors.gray[5],
-    "tab.unfocusedActiveForeground": colors.gray[3],
-    "tab.unfocusedInactiveForeground": colors.gray[5],
-    "tab.hoverBackground": colors.gray[6],
-    "tab.unfocusedHoverBackground": colors.gray[6],
-    "tab.hoverForeground": colors.gray[3],
-    "tab.unfocusedHoverForeground": colors.gray[3],
-    "tab.hoverBorder": colors.gray[6],
-    "tab.unfocusedHoverBorder": colors.gray[6],
-    "tab.activeModifiedBorder": colors.accent,
-    "tab.inactiveModifiedBorder": colors.accent,
-    "tab.unfocusedActiveModifiedBorder": colors.accent,
-    "tab.unfocusedInactiveModifiedBorder": colors.accent,
-    "editorPane.background": colors.gray[8],
-    "sideBySideEditor.horizontalBorder": colors.gray[7],
-    "sideBySideEditor.verticalBorder": colors.gray[7],
-
-    // Selection colors
-    "editor.selectionBackground": transparency.lowTransparency(colors.gray[7]), // Color of the editor selection.
-    "editor.selectionForeground": colors.gray[3], // Color of the selected text for high contrast.
-    "editor.inactiveSelectionBackground": transparency.lowTransparency(
-      colors.gray[7]
-    ), // Color of the selection in an inactive editor. The color must not be opaque so as not to hide underlying decorations.
-    "editor.selectionHighlightBackground": transparency.lowTransparency(
-      colors.accent
-    ), // Color for regions with the same content as the selection. The color must not be opaque so as not to hide underlying decorations.
-    "editor.selectionHighlightBorder": transparency.halfwayTransparency(
-      colors.gray[7]
-    ), // Border color for regions with the same content as the selection.
-
-    // Word highlight colors
-    "editor.wordHighlightBackground": transparency.semiClearTransparency(
-      colors.gray[7]
-    ), // Background color of a symbol during read-access, for example when reading a variable. The color must not be opaque so as not to hide underlying decorations.
-    "editor.wordHighlightBorder": transparency.halfwayTransparency(
-      colors.gray[7]
-    ), // Border color of a symbol during read-access, for example when reading a variable.
-    "editor.wordHighlightStrongBackground": transparency.halfwayTransparency(
-      colors.gray[7]
-    ), // Background color of a symbol during write-access, for example when writing to a variable. The color must not be opaque so as not to hide underlying decorations.
-    "editor.wordHighlightStrongBorder": transparency.halfwayTransparency(
-      colors.gray[7]
-    ), // Border color of a symbol during write-access, for example when writing to a variable.
-    "editor.wordHighlightTextBackground": transparency.halfwayTransparency(
-      colors.gray[7]
-    ), // Background color of a textual occurrence for a symbol. The color must not be opaque so as not to hide underlying decorations.
-    "editor.wordHighlightTextBorder": transparency.semiClearTransparency(
-      colors.gray[7]
-    ), // Border color of a textual occurrence for a symbol.
-
-    // Find colors
-    "editor.findMatchBackground": transparency.halfwayTransparency(
-      colors.gray[7]
-    ), // Color of the current search match.
-    "editor.findMatchHighlightBackground": transparency.semiClearTransparency(
-      colors.gray[7]
-    ), // Color of the other search matches. The color must not be opaque so as not to hide underlying decorations.
-    "editor.findRangeHighlightBackground": colors.gray[7], // Color the range limiting the search (Enable 'Find in Selection' in the find widget). The color must not be opaque so as not to hide underlying decorations.
-    "editor.findMatchBorder": transparency.halfwayTransparency(colors.gray[7]), // Border color of the current search match.
-    "editor.findMatchHighlightBorder": transparency.halfwayTransparency(
-      colors.gray[7]
-    ), // Border color of the other search matches.
-    "editor.findRangeHighlightBorder": colors.gray[7], // Border color the range limiting the search (Enable 'Find in Selection' in the find widget).
-
-    // Search Results
-    "search.resultsInfoForeground": colors.gray[5], // Color of the text in the search viewlet's completion message. For example, this color is used in the text
-
-    // Search Editor Matches
-    "searchEditor.findMatchBackground": colors.accent, // Color of the editor's results.
-    "searchEditor.findMatchBorder": colors.gray[7], // Border color of the editor's results.
-    "searchEditor.textInputBorder": colors.gray[7], // Search editor text input box border.
-
-    // Hover Highlight
-    "editor.hoverHighlightBackground": transparency.lowTransparency(
-      colors.gray[7]
-    ), // Highlight below the word for which a hover is shown.
-
-    // Line Highlight
-    "editor.lineHighlightBackground": transparency.semiClearTransparency(
-      colors.gray[7]
-    ), // Background color for the highlight of line at the cursor position.
-    "editor.lineHighlightBorder": transparency.halfwayTransparency(
-      colors.gray[7]
-    ), // Background color for the border around the line at the cursor position.
-
-    // Unicode Highlight
-    "editorUnicodeHighlight.border": colors.accent, // Border color used to highlight unicode characters.
-    "editorUnicodeHighlight.background": transparency.halfwayTransparency(
-      colors.gray[7]
-    ), // Background color used to highlight unicode characters.
-
-    // Link
-    "editorLink.activeForeground": colors.gray[4], // Color of active links.
-
-    // Range Highlight
-    "editor.rangeHighlightBackground": transparency.halfwayTransparency(
-      colors.gray[7]
-    ), // Background color of highlighted ranges, used by Quick Open, Symbol in File and Find features.
-    "editor.rangeHighlightBorder": colors.accent, // Background color of the border around highlighted ranges.
-
-    // Symbol Highlight
-    "editor.symbolHighlightBackground": colors.accent, // Background color of highlighted symbol.
-    "editor.symbolHighlightBorder": colors.gray[7], // Background color of the border around highlighted symbols.
-
-    // Editor Whitespaces
-    "editorWhitespace.foreground": colors.gray[7], // Color of whitespace characters in the editor.
-
-    // Editor Indent Guides
-    "editorIndentGuide.background": colors.gray[7], // Color of the editor indentation guides.
-    "editorIndentGuide.activeBackground": colors.accent, // Color of the active editor indentation guide.
-
-    // Editor Inline Hints
-    "editorInlayHint.background": transparency.halfwayTransparency(
-      colors.gray[7]
-    ), // Background color of inline hints.
-    "editorInlayHint.foreground": colors.gray[5], // Foreground color of inline hints.
-    "editorInlayHint.typeForeground": colors.gray[5], // Foreground color of inline hints for types
-    "editorInlayHint.typeBackground": transparency.halfwayTransparency(
-      colors.gray[7]
-    ), // Background color of inline hints for types
-    "editorInlayHint.parameterForeground": colors.gray[5], // Foreground color of inline hints for parameters
-    "editorInlayHint.parameterBackground": transparency.halfwayTransparency(
-      colors.gray[7]
-    ), // Background color of inline hints for parameters
-
-    // Editor Rulers
-    "editorRuler.foreground": colors.gray[7], // Color of the editor rulers.
-
-    // Linked Editing Mode
-    "editor.linkedEditingBackground": colors.gray[8], // Background color when the editor is in linked editing mode.
-
-    // CodeLens
-    "editorCodeLens.foreground": colors.gray[6], // Foreground color of an editor CodeLens.
-
-    // Lightbulb
-    "editorLightBulb.foreground": colors.gray[7], // The color used for the lightbulb actions icon.
-    "editorLightBulbAutoFix.foreground": colors.gray[7], // The color used for the lightbulb auto fix actions icon.
-
-    // Bracket matches
-    "editorBracketMatch.background": transparency.semiClearTransparency(
-      colors.accent
-    ),
-    "editorBracketMatch.border": transparency.halfwayTransparency(
-      colors.lime[3]
-    ),
-
-    // Bracket pair colorization
-    "editorBracketHighlight.foreground1": colors.blue[2],
-    "editorBracketHighlight.foreground2": colors.lime[2],
-    "editorBracketHighlight.foreground3": colors.cyan[2],
-    "editorBracketHighlight.foreground4": colors.red[2],
-    "editorBracketHighlight.foreground5": colors.blue[2],
-    "editorBracketHighlight.foreground6": colors.cyan[2],
-    "editorBracketHighlight.unexpectedBracket.foreground":
-      transparency.halfwayTransparency(colors.amber[3]),
-
-    // Bracket pair guides
-    "editorBracketPairGuide.activeBackground1": colors.blue[2],
-    "editorBracketPairGuide.activeBackground2": colors.lime[2],
-    "editorBracketPairGuide.activeBackground3": colors.cyan[2],
-    "editorBracketPairGuide.activeBackground4": colors.red[2],
-    "editorBracketPairGuide.activeBackground5": colors.blue[2],
-    "editorBracketPairGuide.activeBackground6": colors.cyan[2],
-    "editorBracketPairGuide.background1": colors.blue[2],
-    "editorBracketPairGuide.background2": colors.lime[2],
-    "editorBracketPairGuide.background3": colors.cyan[2],
-    "editorBracketPairGuide.background4": colors.red[2],
-    "editorBracketPairGuide.background5": colors.blue[2],
-    "editorBracketPairGuide.background6": colors.cyan[2],
-
-    // Folding
-    "editor.foldBackground": transparency.semiClearTransparency(colors.gray[8]),
-
-    // Overview ruler
-    "editorOverviewRuler.background": colors.gray[8],
-    "editorOverviewRuler.border": colors.gray[7],
-    "editorOverviewRuler.findMatchForeground": "#fe420d66",
-    "editorOverviewRuler.rangeHighlightForeground": "#fe420d66",
-    "editorOverviewRuler.selectionHighlightForeground": "#cbd5e066",
-    "editorOverviewRuler.wordHighlightForeground": "#fe420d66",
-    "editorOverviewRuler.wordHighlightStrongForeground": "#48BB7866",
-    "editorOverviewRuler.wordHighlightTextForeground": "#3c485666",
-    "editorOverviewRuler.modifiedForeground": transparency.halfwayTransparency(
-      colors.amber[4]
-    ),
-    "editorOverviewRuler.addedForeground": transparency.halfwayTransparency(
-      colors.lime[4]
-    ),
-    "editorOverviewRuler.deletedForeground": transparency.halfwayTransparency(
-      colors.red[5]
-    ),
-    "editorOverviewRuler.errorForeground": transparency.halfwayTransparency(
-      colors.red[5]
-    ),
-    "editorOverviewRuler.warningForeground": transparency.halfwayTransparency(
-      colors.orange[3]
-    ),
-    "editorOverviewRuler.infoForeground": transparency.halfwayTransparency(
-      colors.gray[7]
-    ),
-    "editorOverviewRuler.bracketMatchForeground":
-      transparency.halfwayTransparency(colors.accent),
-
-    // Errors and warnings
-
-    "editorError.border": transparency.halfwayTransparency(colors.red[5]),
-    "editorError.background": transparency.semiClearTransparency(colors.red[5]),
-    "editorWarning.border": transparency.halfwayTransparency(colors.amber[3]),
-    "editorWarning.background": transparency.semiClearTransparency(
-      colors.amber[3]
-    ),
-    "editorInfo.border": transparency.halfwayTransparency(colors.lime[4]),
-    "editorInfo.background": transparency.semiClearTransparency(colors.lime[4]),
-    "editorHint.foreground": colors.gray[3],
-    "editorHint.border": colors.gray[4],
-    // Colors for problems
-    "problemsErrorIcon.foreground": colors.red[5],
-    "problemsWarningIcon.foreground": colors.amber[3],
-    "problemsInfoIcon.foreground": colors.lime[4],
-
-    // Colors for unused source code
-    "editorUnnecessaryCode.border": colors.gray[7], // underline unnecessary code instead of fading it out.
-    "editorUnnecessaryCode.opacity": transparency.moderateTransparency(
-      colors.gray[7]
-    ), // ender the code with 75% opacity.
-
-    // Colors for gutter
-    "editorGutter.background": colors.gray[9],
-    "editorGutter.modifiedBackground": transparency.halfwayTransparency(
-      colors.amber[3]
-    ),
-    "editorGutter.addedBackground": transparency.halfwayTransparency(
-      colors.lime[4]
-    ),
-    "editorGutter.deletedBackground": transparency.halfwayTransparency(
-      colors.red[5]
-    ),
-    "editorGutter.commentRangeForeground": colors.gray[7],
-    "editorGutter.commentGlyphForeground": colors.gray[7],
-    "editorGutter.commentUnresolvedGlyphForeground":
-      transparency.halfwayTransparency(colors.amber[3]),
-    "editorGutter.foldingControlForeground": colors.gray[3],
-
-    // Colors for editor comments widget
-    "editorCommentsWidget.resolvedBorder": colors.lime[4],
-    "editorCommentsWidget.unresolvedBorder": colors.amber[3],
-    "editorCommentsWidget.rangeBackground": colors.gray[7],
-    "editorCommentsWidget.rangeBorder": colors.gray[7],
-    "editorCommentsWidget.rangeActiveBackground": colors.gray[7],
-    "editorCommentsWidget.rangeActiveBorder": colors.gray[7],
-
-    // Colors for diff editor
-    "diffEditor.insertedTextBackground": transparency.semiClearTransparency(
-      colors.lime[3]
-    ),
-    "diffEditor.insertedTextBorder": colors.lime[4],
-    "diffEditor.removedTextBackground": transparency.semiClearTransparency(
-      colors.red[3]
-    ),
-    "diffEditor.removedTextBorder": colors.red[5],
-    "diffEditor.border": colors.gray[7],
-    "diffEditor.diagonalFill": colors.gray[7],
-    "diffEditor.insertedLineBackground": transparency.semiClearTransparency(
-      colors.lime[5]
-    ),
-    "diffEditor.removedLineBackground": transparency.semiClearTransparency(
-      colors.red[5]
-    ),
-    "diffEditorGutter.insertedLineBackground": transparency.lowTransparency(
-      colors.lime[4]
-    ),
-    "diffEditorGutter.removedLineBackground": transparency.lowTransparency(
-      colors.red[5]
-    ),
-    "diffEditorOverview.insertedForeground": colors.lime[4],
-    "diffEditorOverview.removedForeground": colors.red[5],
-
-    // Editor widget colors
-    "editorWidget.foreground": colors.gray[5],
-    "editorWidget.background": colors.gray[7],
-    "editorWidget.border": colors.gray[7],
-    "editorWidget.resizeBorder": colors.gray[7],
-    "editorSuggestWidget.background": colors.gray[7],
-    "editorSuggestWidget.border": colors.gray[7],
-    "editorSuggestWidget.foreground": colors.gray[5],
-    "editorSuggestWidget.focusHighlightForeground": colors.gray[3],
-    "editorSuggestWidget.highlightForeground": colors.gray[3],
-    "editorSuggestWidget.selectedBackground": colors.gray[7],
-    "editorSuggestWidget.selectedForeground": colors.gray[3],
-    "editorSuggestWidget.selectedIconForeground": colors.gray[3],
-    "editorSuggestWidgetStatus.foreground": colors.gray[3],
-    "editorHoverWidget.foreground": colors.gray[5],
-    "editorHoverWidget.background": colors.gray[8],
-    "editorHoverWidget.border": colors.gray[7],
-    "editorHoverWidget.highlightForeground": colors.gray[3],
-    "editorHoverWidget.statusBarBackground": colors.gray[8],
-    "editorGhostText.border": transparency.lowTransparency(colors.gray[7]),
-    "editorGhostText.background": transparency.lowTransparency(colors.gray[7]),
-    "editorGhostText.foreground": colors.gray[6],
-    "editorStickyScroll.background": colors.gray[8],
-    "editorStickyScrollHover.background": colors.gray[7],
-
-    // Debug Exception widget colors
-    "debugExceptionWidget.background": colors.gray[8],
-    "debugExceptionWidget.border": colors.gray[7],
-
-    // Editor marker view colors
-    "editorMarkerNavigation.background": colors.gray[8],
-    "editorMarkerNavigationError.background": colors.red[5],
-    "editorMarkerNavigationWarning.background": colors.amber[3],
-    "editorMarkerNavigationInfo.background": colors.lime[4],
-    "editorMarkerNavigationError.headerBackground": colors.red[5],
-    "editorMarkerNavigationWarning.headerBackground": colors.amber[3],
-    "editorMarkerNavigationInfo.headerBackground": colors.lime[4],
-
-    // Peek view colors
-    "peekView.border": colors.gray[7],
-    "peekViewEditor.background": colors.gray[8],
-    "peekViewEditorGutter.background": colors.gray[8],
-    "peekViewEditor.matchHighlightBackground": transparency.halfwayTransparency(
-      colors.gray[7]
-    ),
-    "peekViewEditor.matchHighlightBorder": transparency.lowTransparency(
-      colors.accent
-    ),
-    "peekViewEditorStickyScroll.background": colors.gray[8],
-    "peekViewResult.background": colors.gray[8],
-    "peekViewResult.fileForeground": colors.gray[3],
-    "peekViewResult.lineForeground": colors.gray[5],
-    "peekViewResult.matchHighlightBackground": transparency.halfwayTransparency(
-      colors.gray[7]
-    ),
-    "peekViewResult.selectionBackground": colors.gray[7],
-    "peekViewResult.selectionForeground": colors.gray[3],
-    "peekViewTitle.background": colors.gray[7],
-    "peekViewTitleDescription.foreground": colors.gray[5],
-    "peekViewTitleLabel.foreground": colors.gray[3],
-
-    // Merge conflicts colors
-    "merge.currentHeaderBackground": colors.accent, // Current header background in inline merge conflicts.
-    "merge.currentContentBackground": transparency.halfwayTransparency(
-      colors.accent
-    ), // Current content background in inline merge conflicts.
-    "merge.incomingHeaderBackground": colors.lime[4], // Incoming header background in inline merge conflicts.
-    "merge.incomingContentBackground": "#48BB781a", // Incoming content background in inline merge conflicts.
-    "merge.border": colors.gray[7], // Border color on headers and the splitter in inline merge conflicts.
-    "merge.commonContentBackground": colors.gray[7], // Common ancestor content background in inline merge-conflicts.
-    "merge.commonHeaderBackground": colors.gray[7], // Common ancestor header background in inline merge-conflicts.
-    "editorOverviewRuler.currentContentForeground": colors.accent, // Current overview ruler foreground for inline merge conflicts.
-    "editorOverviewRuler.incomingContentForeground": colors.lime[4], // Incoming overview ruler foreground for inline merge conflicts.
-    "editorOverviewRuler.commonContentForeground": colors.gray[7], // Common ancestor overview ruler foreground for inline merge conflicts.
-    "mergeEditor.change.background": transparency.halfwayTransparency(
-      colors.accent
-    ), // The background color for changes.
-    "mergeEditor.change.word.background": transparency.semiClearTransparency(
-      colors.accent
-    ), // The background color for word changes.
-    "mergeEditor.conflict.unhandledUnfocused.border": colors.amber[3], // The border color of unhandled unfocused conflicts.
-    "mergeEditor.conflict.unhandledFocused.border": colors.amber[3], // The border color of unhandled focused conflicts.
-    "mergeEditor.conflict.handledUnfocused.border": colors.amber[3], // The border color of handled unfocused conflicts.
-    "mergeEditor.conflict.handledFocused.border": colors.amber[3], // The border color of handled focused conflicts.
-    "mergeEditor.conflict.handled.minimapOverViewRuler": colors.accent, // The foreground color for changes in input 1.
-    "mergeEditor.conflict.unhandled.minimapOverViewRuler": colors.accent, // The foreground color for changes in input 1.
-    "mergeEditor.conflictingLines.background": colors.amber[3], // The background of the "Conflicting Lines" text.
-    "mergeEditor.changeBase.background": colors.gray[7], // The background color for changes in base.
-    "mergeEditor.changeBase.word.background": "#3c485633", // The background color for word changes in base.
-    "mergeEditor.conflict.input1.background":
-      transparency.semiClearTransparency(colors.accent), // The background color of decorations in input 1.
-    "mergeEditor.conflict.input2.background": "#48BB7833", // The background color of decorations in input 2.
-
-    // Panel colors
-    "panel.background": colors.gray[8],
-    "panel.border": colors.gray[7],
-    "panel.dropBorder": colors.gray[7],
-    "panelTitle.activeBorder": colors.gray[7],
-    "panelTitle.activeForeground": colors.gray[3],
-    "panelTitle.inactiveForeground": colors.gray[5],
-    "panelInput.border": colors.gray[7],
-    "panelSection.border": colors.gray[7],
-    "panelSection.dropBackground": colors.gray[7],
-    "panelSectionHeader.background": colors.gray[7],
-    "panelSectionHeader.foreground": colors.gray[3],
-    "panelSectionHeader.border": colors.gray[7],
-
-    // Status Bar colors
-    "statusBar.background": colors.gray[7],
-    "statusBar.foreground": colors.gray[5],
-    "statusBar.border": colors.gray[7],
-    "statusBar.debuggingBackground": transparency.lowTransparency(
-      colors.amber[5]
-    ),
-    "statusBar.debuggingForeground": colors.gray[3],
-    "statusBar.debuggingBorder": colors.gray[7],
-    "statusBar.noFolderForeground": colors.gray[5],
-    "statusBar.noFolderBackground": colors.gray[8],
-    "statusBar.noFolderBorder": colors.gray[7],
-    "statusBarItem.activeBackground": colors.gray[6],
-    "statusBarItem.hoverBackground": colors.gray[6],
-    "statusBarItem.prominentForeground": colors.accent,
-    "statusBarItem.prominentBackground": colors.gray[7],
-    "statusBarItem.prominentHoverBackground":
-      transparency.semiClearTransparency(colors.accent),
-    "statusBarItem.remoteBackground": colors.gray[8],
-    "statusBarItem.remoteForeground": colors.gray[5],
-    "statusBarItem.errorBackground": colors.red[5],
-    "statusBarItem.errorForeground": colors.gray[5],
-    "statusBarItem.warningBackground": colors.amber[3],
-    "statusBarItem.warningForeground": colors.gray[5],
-    "statusBarItem.compactHoverBackground": transparency.semiClearTransparency(
-      colors.accent
-    ),
-    "statusBarItem.focusBorder": colors.gray[5],
-    "statusBar.focusBorder": colors.gray[6],
-
-    // Title Bar colors
-    "titleBar.activeBackground": colors.gray[7],
-    "titleBar.activeForeground": colors.gray[3],
-    "titleBar.inactiveBackground": colors.gray[7],
-    "titleBar.inactiveForeground": colors.gray[5],
-    "titleBar.border": colors.gray[7],
-
-    // Menu Bar colors
-    "menubar.selectionForeground": colors.gray[3],
-    "menubar.selectionBackground": colors.accent,
-    "menubar.selectionBorder": colors.accent,
-    "menu.foreground": colors.gray[3],
-    "menu.background": colors.gray[8],
-    "menu.selectionForeground": colors.gray[3],
-    "menu.selectionBackground": colors.accent,
-    "menu.selectionBorder": colors.accent,
-    "menu.separatorBackground": colors.gray[7],
-    "menu.border": colors.gray[7],
-
-    // Command Center colors
-    "commandCenter.foreground": colors.gray[3],
-    "commandCenter.activeForeground": colors.accent,
-    "commandCenter.background": colors.gray[8],
-    "commandCenter.activeBackground": colors.gray[7],
-    "commandCenter.border": colors.gray[5],
-    "commandCenter.inactiveForeground": colors.gray[3],
-    "commandCenter.inactiveBorder": colors.gray[5],
-    "commandCenter.activeBorder": colors.gray[3],
-
-    // Notification colors
-    "notificationCenter.border": colors.gray[7],
-    "notificationCenterHeader.foreground": colors.gray[3],
-    "notificationCenterHeader.background": colors.gray[7],
-    "notificationToast.border": colors.gray[6],
-    "notifications.foreground": colors.gray[5],
-    "notifications.background": colors.gray[8],
-    "notifications.border": colors.gray[7],
-    "notificationLink.foreground": colors.gray[4],
-    "notificationsErrorIcon.foreground": colors.red[5],
-    "notificationsWarningIcon.foreground": colors.amber[3],
-    "notificationsInfoIcon.foreground": colors.gray[3],
-
-    // Banner colors
-    "banner.background": colors.gray[7],
-    "banner.foreground": colors.gray[3],
-    "banner.iconForeground": colors.gray[3],
-
-    // Extension colors
-    "extensionButton.prominentForeground": colors.gray[3],
-    "extensionButton.prominentBackground": colors.gray[7],
-    "extensionButton.prominentHoverBackground": colors.gray[7],
-    "extensionButton.background": colors.gray[7],
-    "extensionButton.foreground": colors.gray[3],
-    "extensionButton.hoverBackground": colors.gray[7],
-    "extensionButton.separator": colors.gray[7],
-    "extensionBadge.remoteBackground": colors.gray[7],
-    "extensionBadge.remoteForeground": colors.gray[5],
-    "extensionIcon.starForeground": colors.gray[5],
-    "extensionIcon.verifiedForeground": colors.lime[4],
-    "extensionIcon.preReleaseForeground": colors.gray[3],
-    "extensionIcon.sponsorForeground": colors.gray[5],
-
-    // Quick picker colors
-    "pickerGroup.border": colors.gray[7],
-    "pickerGroup.foreground": colors.gray[5],
-    "quickInput.background": colors.gray[8],
-    "quickInput.foreground": colors.gray[5],
-    "quickInputList.focusBackground": colors.gray[7],
-    "quickInputList.focusForeground": colors.gray[3],
-    "quickInputList.focusIconForeground": colors.gray[3],
-    "quickInputTitle.background": colors.gray[7],
-
-    // Keybinding label colors
-    "keybindingLabel.background": colors.gray[5],
-    "keybindingLabel.foreground": colors.gray[10],
-    "keybindingLabel.border": colors.gray[3],
-    "keybindingLabel.bottomBorder": colors.gray[8],
-
-    // Keyboard shortcut table colors
-    "keybindingTable.headerBackground": colors.gray[8],
-    "keybindingTable.rowsBackground": colors.gray[8],
-
-    // Integrated Terminal colors
-    "terminal.background": colors.gray[8],
-    "terminal.border": colors.gray[7],
-    "terminal.foreground": colors.gray[5],
-    "terminal.ansiBlack": colors.gray[11],
-    "terminal.ansiBlue": colors.blue[4],
-    "terminal.ansiBrightBlack": colors.gray[8],
-    "terminal.ansiBrightBlue": colors.blue[7],
-    "terminal.ansiBrightCyan": colors.cyan[7],
-    "terminal.ansiBrightGreen": colors.lime[7],
-    "terminal.ansiBrightMagenta": colors.orange[7],
-    "terminal.ansiBrightRed": colors.red[7],
-    "terminal.ansiBrightWhite": colors.gray[5],
-    "terminal.ansiBrightYellow": colors.amber[7],
-    "terminal.ansiCyan": colors.cyan[4],
-    "terminal.ansiGreen": colors.lime[4],
-    "terminal.ansiMagenta": colors.orange[4],
-    "terminal.ansiRed": colors.red[4],
-    "terminal.ansiWhite": colors.gray[2],
-    "terminal.ansiYellow": colors.amber[4],
-    "terminal.selectionBackground": colors.gray[7],
-    "terminal.selectionForeground": colors.gray[5],
-    "terminal.inactiveSelectionBackground": colors.gray[7],
-    "terminal.findMatchBackground": transparency.halfwayTransparency(
-      colors.accent
-    ),
-    "terminal.findMatchBorder": colors.accent,
-    "terminal.findMatchHighlightBackground": transparency.semiClearTransparency(
-      colors.accent
-    ),
-    "terminal.findMatchHighlightBorder": transparency.halfwayTransparency(
-      colors.accent
-    ),
-    "terminal.hoverHighlightBackground": transparency.halfwayTransparency(
-      colors.accent
-    ),
-    "terminalCursor.background": colors.accent,
-    "terminalCursor.foreground": colors.gray[7],
-    "terminal.dropBackground": transparency.semiClearTransparency(
-      colors.accent
-    ),
-    "terminal.tab.activeBorder": colors.accent,
-    "terminalCommandDecoration.defaultBackground": colors.accent,
-    "terminalCommandDecoration.successBackground": colors.lime[4],
-    "terminalCommandDecoration.errorBackground": colors.red[5],
-    "terminalOverviewRuler.cursorForeground": colors.accent,
-    "terminalOverviewRuler.findMatchForeground": colors.accent,
-
-    // Debug colors
-    "debugToolBar.background": colors.gray[7],
-    "debugToolBar.border": colors.gray[6],
-    "editor.stackFrameHighlightBackground": transparency.halfwayTransparency(
-      colors.amber[3]
-    ),
-    "editor.focusedStackFrameHighlightBackground":
-      transparency.halfwayTransparency(colors.lime[4]),
-    "editor.inlineValuesForeground": colors.accent,
-    "editor.inlineValuesBackground": transparency.halfwayTransparency(
-      colors.accent
-    ),
-    "debugView.exceptionLabelForeground": colors.red[5],
-    "debugView.exceptionLabelBackground": transparency.halfwayTransparency(
-      colors.accent
-    ),
-    "debugView.stateLabelForeground": colors.gray[7],
-    "debugView.stateLabelBackground": transparency.halfwayTransparency(
-      colors.accent
-    ),
-    "debugView.valueChangedHighlight": colors.lime[4],
-    "debugTokenExpression.name": colors.blue[2],
-    "debugTokenExpression.value": colors.blue[1],
-    "debugTokenExpression.string": colors.blue[1],
-    "debugTokenExpression.boolean": colors.lime[2],
-    "debugTokenExpression.number": colors.lime[2],
-    "debugTokenExpression.error": colors.red[2],
-
-    // Testing colors
-    "testing.iconFailed": colors.red[5],
-    "testing.iconErrored": colors.red[5],
-    "testing.iconPassed": colors.lime[4],
-    "testing.runAction": colors.accent,
-    "testing.iconQueued": colors.amber[3],
-    "testing.iconUnset": colors.gray[7],
-    "testing.iconSkipped": colors.amber[3],
-    "testing.peekBorder": colors.accent,
-    "testing.peekHeaderBackground": colors.gray[8],
-    "testing.message.error.decorationForeground": colors.red[5],
-    "testing.message.error.lineBackground": colors.gray[8],
-    "testing.message.info.decorationForeground": colors.gray[7],
-    "testing.message.info.lineBackground": colors.gray[8],
-
-    // Welcome page colors
-    "welcomePage.background": colors.gray[8],
-    "welcomePage.progress.background": colors.gray[7],
-    "welcomePage.progress.foreground": colors.accent,
-    "welcomePage.tileBackground": colors.gray[7],
-    "welcomePage.tileHoverBackground": colors.gray[7],
-    "welcomePage.tileBorder": colors.gray[7],
-
-    // Walkthrough colors
-    "walkThrough.embeddedEditorBackground": colors.gray[7],
-    "walkthrough.stepTitle.foreground": colors.accent,
-
-    // Source Control colors
-    "scm.providerBorder": colors.gray[7],
-
-    // Git colors
-    "gitDecoration.addedResourceForeground": colors.lime[4],
-    "gitDecoration.modifiedResourceForeground": colors.amber[3],
-    "gitDecoration.deletedResourceForeground": colors.red[5],
-    "gitDecoration.renamedResourceForeground": colors.amber[3],
-    "gitDecoration.stageModifiedResourceForeground": colors.amber[4],
-    "gitDecoration.stageDeletedResourceForeground": colors.red[6],
-    "gitDecoration.untrackedResourceForeground": colors.gray[5],
-    "gitDecoration.ignoredResourceForeground": colors.gray[6],
-    "gitDecoration.conflictingResourceForeground": colors.amber[3],
-    "gitDecoration.submoduleResourceForeground": colors.gray[6],
-
-    // Settings Editor colors
-    "settings.headerForeground": colors.gray[4],
-    "settings.modifiedItemIndicator": transparency.halfwayTransparency(
-      colors.amber[3]
-    ),
-    "settings.dropdownBackground": colors.gray[8],
-    "settings.dropdownForeground": colors.gray[5],
-    "settings.dropdownBorder": colors.gray[7],
-    "settings.dropdownListBorder": colors.gray[7],
-    "settings.checkboxBackground": colors.gray[8],
-    "settings.checkboxForeground": colors.gray[5],
-    "settings.checkboxBorder": colors.gray[7],
-    "settings.rowHoverBackground": colors.gray[7],
-    "settings.textInputBackground": colors.gray[8],
-    "settings.textInputForeground": colors.gray[5],
-    "settings.textInputBorder": colors.gray[7],
-    "settings.numberInputBackground": colors.gray[8],
-    "settings.numberInputForeground": colors.gray[5],
-    "settings.numberInputBorder": colors.gray[7],
-    "settings.focusedRowBackground": colors.gray[7],
-    "settings.focusedRowBorder": colors.accent,
-    "settings.headerBorder": colors.gray[7],
-    "settings.sashBorder": colors.gray[7],
-    "settings.settingsHeaderHoverForeground": colors.accent,
-
-    // Breadcrumbs colors
-    "breadcrumb.foreground": colors.gray[5],
-    "breadcrumb.background": colors.gray[8],
-    "breadcrumb.focusForeground": colors.gray[3],
-    "breadcrumb.activeSelectionForeground": colors.gray[3],
-    "breadcrumbPicker.background": colors.gray[7],
-
-    // Snippets colors
-    "editor.snippetTabstopHighlightBackground": colors.gray[7],
-    "editor.snippetTabstopHighlightBorder": colors.accent,
-    "editor.snippetFinalTabstopHighlightBackground": colors.gray[7],
-    "editor.snippetFinalTabstopHighlightBorder": colors.accent,
-
-    // Symbol Icons colors
-    "symbolIcon.arrayForeground": colors.orange[3],
-    "symbolIcon.booleanForeground": colors.blue[3],
-    "symbolIcon.classForeground": colors.orange[3],
-    "symbolIcon.colorForeground": colors.blue[2],
-    "symbolIcon.constantForeground": colors.lime[3],
-    "symbolIcon.constructorForeground": colors.cyan[2],
-    "symbolIcon.enumeratorForeground": colors.orange[3],
-    "symbolIcon.enumeratorMemberForeground": colors.blue[3],
-    "symbolIcon.eventForeground": colors.gray[7],
-    "symbolIcon.fieldForeground": colors.orange[3],
-    "symbolIcon.fileForeground": colors.amber[4],
-    "symbolIcon.folderForeground": colors.amber[4],
-    "symbolIcon.functionForeground": colors.cyan[3],
-    "symbolIcon.interfaceForeground": colors.orange[3],
-    "symbolIcon.keyForeground": colors.blue[3],
-    "symbolIcon.keywordForeground": colors.red[3],
-    "symbolIcon.methodForeground": colors.cyan[3],
-    "symbolIcon.moduleForeground": colors.red[3],
-    "symbolIcon.namespaceForeground": colors.red[3],
-    "symbolIcon.nullForeground": colors.blue[3],
-    "symbolIcon.numberForeground": colors.lime[3],
-    "symbolIcon.objectForeground": colors.orange[3],
-    "symbolIcon.operatorForeground": colors.blue[2],
-    "symbolIcon.packageForeground": colors.orange[3],
-    "symbolIcon.propertyForeground": colors.orange[3],
-    "symbolIcon.referenceForeground": colors.blue[3],
-    "symbolIcon.snippetForeground": colors.blue[3],
-    "symbolIcon.stringForeground": colors.blue[2],
-    "symbolIcon.structForeground": colors.orange[3],
-    "symbolIcon.textForeground": colors.blue[2],
-    "symbolIcon.typeParameterForeground": colors.blue[2],
-    "symbolIcon.unitForeground": colors.blue[3],
-    "symbolIcon.variableForeground": colors.orange[3],
-
-    // Debug Icons colors
-    "debugIcon.breakpointForeground": colors.red[5],
-    "debugIcon.breakpointDisabledForeground": colors.gray[6],
-    "debugIcon.breakpointUnverifiedForeground": colors.gray[6],
-    "debugIcon.breakpointCurrentStackframeForeground": colors.lime[4],
-    "debugIcon.breakpointStackframeForeground": colors.gray[6],
-    "debugIcon.startForeground": colors.lime[4],
-    "debugIcon.pauseForeground": colors.amber[3],
-    "debugIcon.stopForeground": colors.red[5],
-    "debugIcon.disconnectForeground": colors.red[5],
-    "debugIcon.restartForeground": colors.orange[4],
-    "debugIcon.stepOverForeground": colors.lime[4],
-    "debugIcon.stepIntoForeground": colors.amber[3],
-    "debugIcon.stepOutForeground": colors.amber[3],
-    "debugIcon.continueForeground": colors.lime[4],
-    "debugIcon.stepBackForeground": colors.amber[3],
-    "debugConsole.infoForeground": colors.gray[3],
-    "debugConsole.warningForeground": colors.amber[4],
-    "debugConsole.errorForeground": colors.red[2],
-    "debugConsole.sourceForeground": colors.amber[3],
-    "debugConsoleInputIcon.foreground": colors.cyan[3],
-
-    // Notebook colors
-    "notebook.editorBackground": colors.gray[8],
-    "notebook.cellBorderColor": colors.gray[7],
-    "notebook.cellHoverBackground": colors.gray[8],
-    "notebook.cellInsertionIndicator": colors.accent,
-    "notebook.cellStatusBarItemHoverBackground": colors.gray[7],
-    "notebook.cellToolbarSeparator": colors.gray[7],
-    "notebook.cellEditorBackground": colors.gray[8],
-    "notebook.focusedCellBackground": colors.gray[8],
-    "notebook.focusedCellBorder": colors.gray[4],
-    "notebook.focusedEditorBorder": colors.gray[4],
-    "notebook.inactiveFocusedCellBorder": colors.gray[7],
-    "notebook.inactiveSelectedCellBorder": colors.gray[7],
-    "notebook.outputContainerBackgroundColor": colors.gray[8],
-    "notebook.outputContainerBorderColor": colors.gray[7],
-    "notebook.selectedCellBackground": colors.gray[7],
-    "notebook.selectedCellBorder": colors.gray[7],
-    "notebook.symbolHighlightBackground": colors.accent,
-    "notebookScrollbarSlider.activeBackground": colors.accent,
-    "notebookScrollbarSlider.background": colors.gray[7],
-    "notebookScrollbarSlider.hoverBackground": colors.gray[7],
-    "notebookStatusErrorIcon.foreground": colors.red[5],
-    "notebookStatusRunningIcon.foreground": colors.accent,
-    "notebookStatusSuccessIcon.foreground": colors.lime[4],
-    "notebookEditorOverviewRuler.runningCellForeground": colors.accent,
-
-    // Chart colors
-    "charts.foreground": colors.gray[7],
-    "charts.lines": colors.gray[7],
-    "charts.red": colors.red[5],
-    "charts.blue": colors.blue[7],
-    "charts.yellow": colors.amber[3],
-    "charts.orange": colors.orange[3],
-    "charts.green": colors.lime[4],
-    "charts.purple": "#805AD5",
-
-    // Ports Colors
-    "ports.iconRunningProcessForeground": colors.lime[4],
-  },
-  semanticHighlighting: true,
-  tokenColors: [
-    {
-      scope: "emphasis",
-      settings: {
-        fontStyle: "italic",
-      },
-    },
-    {
-      scope: "strong",
-      settings: {
-        fontStyle: "bold",
-      },
-    },
-    {
-      scope: ["header", "meta.diff", "meta.diff.header"],
-      settings: {
-        foreground: colors.gray[7],
-      },
-    },
-    {
-      scope: "markup.inserted",
-      settings: {
-        foreground: colors.lime[4],
-      },
-    },
-    {
-      scope: "markup.deleted",
-      settings: {
-        foreground: colors.red[5],
-      },
-    },
-    {
-      scope: "markup.changed",
-      settings: {
-        foreground: colors.amber[3],
-      },
-    },
-    {
-      scope: "invalid",
-      settings: {
-        foreground: colors.red[5],
-        fontStyle: "underline italic",
-      },
-    },
-    {
-      scope: "invalid.deprecated",
-      settings: {
-        foreground: colors.gray[7],
-        fontStyle: "underline italic",
-      },
-    },
-    {
-      scope: "storage.type",
-      settings: {
-        foreground: colors.gray[4],
-      },
-    },
-    {
-      scope: "entity.name.filename",
-      settings: {
-        foreground: colors.gray[5],
-      },
-    },
-    {
-      scope: "markup.error",
-      settings: {
-        foreground: colors.red[5],
-      },
-    },
-    {
-      name: "Underlined markup",
-      scope: ["markup.underline"],
-      settings: {
-        fontStyle: "underline",
-      },
-    },
-    {
-      name: "Bold markup",
-      scope: ["markup.bold"],
-      settings: {
-        fontStyle: "bold",
-      },
-    },
-    {
-      name: "Markup headings",
-      scope: ["markup.heading"],
-      settings: {
-        fontStyle: "bold",
-        foreground: colors.accent,
-      },
-    },
-    {
-      name: "Markup italic",
-      scope: ["markup.italic"],
-      settings: {
-        foreground: transparency.lowTransparency(colors.accent),
-        fontStyle: "italic",
-      },
-    },
-    {
-      name: "Markup strikethrough",
-      scope: ["markup.strikethrough"],
-      settings: {
-        foreground: colors.gray[6],
-        fontStyle: "strikethrough",
-      },
-    },
-
-    {
-      scope: [
-        "string.template",
-        "string.quoted",
-        "string",
-        "string.regexp",
-        "JSON.string",
-        "Markdown.string",
-      ],
-      settings: {
-        foreground: colors.neutral[1],
-      },
-    },
-    {
-      scope: [
-        "keyword.control.import",
-        "keyword.control.export",
-        "keyword.control.from",
-        "keyword.control.as",
-        "keyword",
-      ],
-      settings: {
-        foreground: colors.gray[5],
-      },
-    },
-    {
-      scope: [
-        "keyword.operator",
-        "punctuation.accessor.optional",
-        "keyword.control.conditional",
-        "storage.modifier.ts",
-      ],
-      settings: {
-        foreground: colors.amber[3],
-      },
-    },
-    {
-      scope: ["variable"],
-      settings: {
-        foreground: colors.blue[3],
-      },
-    },
-    {
-      scope: [
-        "constant.numeric",
-        "JSON.number",
-        "constant",
-        "entity.name.constant",
-        "variable.other.constant",
-        "variable.other.enummember",
-        "variable.language",
-      ],
-      settings: {
-        foreground: colors.lime[4],
-      },
-    },
-    {
-      scope: ["variable.other.property"],
-      settings: {
-        foreground: colors.cyan[3],
-      },
-    },
-    {
-      scope: ["variable.language.this"],
-      settings: {
-        foreground: colors.cyan[2],
-      },
-    },
-    {
-      scope: [
-        "entity.name.function",
-        "support.function",
-        "markup.heading",
-        "entity.name.tag.tsx",
-        "meta.tag.tsx",
-        "meta.jsx.children",
-      ],
-      settings: {
-        foreground: colors.accent,
-      },
-    },
-    {
-      scope: ["entity.name.method.tsx"],
-      settings: {
-        foreground: colors.amber[5],
-      },
-    },
-    {
-      scope: ["entity.name.type.class", "support.class"],
-      settings: {
-        foreground: colors.amber[6],
-      },
-    },
-    {
-      scope: ["entity.name.type", "support.type"],
-      settings: {
-        foreground: colors.amber[1],
-      },
-    },
-    {
-      scope: ["entity.name.type.interface", "support.interface"],
-      settings: {
-        foreground: colors.amber[2],
-        fontStyle: "italic",
-      },
-    },
-    {
-      scope: ["keyword.control"],
-      settings: {
-        foreground: colors.neutral[3],
-      },
-    },
-
-    {
-      scope: [
-        "entity.name.tag",
-        "support.type.property-name",
-        "JSON.property",
-        "JSON.key",
-        "variable.parameter.function",
-      ],
-      settings: {
-        foreground: colors.accent,
-      },
-    },
-    {
-      scope: ["markup.bold"],
-      settings: {
-        fontStyle: "bold",
-      },
-    },
-    {
-      scope: [
-        "markup.italic",
-        "markup.quote",
-        "meta.tag.attributes",
-        "string.other.link.title.markdown",
-        "string.other.link.description.markdown",
-      ],
-      settings: {
-        fontStyle: "italic",
-      },
-    },
-    {
-      name: "[The main comments color",
-      scope: ["comment", "punctuation.definition.comment", "string.comment"],
-      settings: {
-        foreground: colors.gray[6],
-        fontStyle: "italic",
-      },
-    },
-    {
-      name: "Punctuations",
-      scope: [
-        "punctuation",
-        "JSON.punctuation",
-        "Markdown.punctuation",
-        "keyword.operator.type.annotation.ts",
-        "meta.brace",
-        "meta.brace.angle.ts",
-        "meta.embedded.expression.jsx",
-        "meta.embedded.expression.tsx",
-        "meta.namespace.declaration.ts",
-        "punctuation.definition.binding-pattern.array.js",
-        "punctuation.definition.binding-pattern.array.ts",
-        "punctuation.definition.binding-pattern.array.tsx",
-        "punctuation.definition.binding-pattern.object.js",
-        "punctuation.definition.binding-pattern.object.jsx",
-        "punctuation.definition.binding-pattern.object.ts",
-        "punctuation.definition.binding-pattern.object.tsx",
-        "punctuation.definition.binding-pattern.object.tsx",
-        "punctuation.definition.block",
-        "punctuation.definition.entity.begin.bracket.square.css",
-        "punctuation.definition.entity.end.bracket.square.css",
-        "punctuation.definition.imports.begin.bracket.round.go",
-        "punctuation.definition.parameters",
-        "punctuation.definition.section.case-statement.tsx",
-        "punctuation.definition.typeparameters.begin.ts",
-        "punctuation.definition.typeparameters.begin.tsx",
-        "punctuation.definition.typeparameters.end.ts",
-        "punctuation.definition.typeparameters.end.tsx",
-        "punctuation.section.function.begin.bracket.round.css",
-        "punctuation.section.function.end.bracket.round.css",
-        "punctuation.separator.comma",
-        "punctuation.separator.key-value.css",
-        "punctuation.separator.list.comma.css",
-        "punctuation.separator.parameter.ts",
-        "punctuation.separator.parameter.tsx",
-        "punctuation.terminator.statement",
-      ],
-      settings: { foreground: colors.gray[4] },
-    },
-    {
-      name: "JSX String",
-      scope: "jsx.children.objectliteral.expression.embedded.tag.string.block",
-      settings: { foreground: colors.lime[3] },
-    },
-  ],
+	name: "Consolvis Dark Theme",
+	type: "dark",
+	colors: {
+		// Base colors
+		focusBorder: colors.GRAY_DARK,
+		foreground: colors.GRAY_MEDIUM_LIGHT,
+		descriptionForeground: colors.GRAY_MEDIUM,
+
+		disabledForeground: colors.GRAY_MEDIUM_DARK,
+		"widget.border": colors.GRAY_DARK,
+		"widget.shadow": colors.GRAY_DEEPER,
+		"selection.background": colors.GRAY_DEEP,
+		"icon.foreground": colors.GRAY_MEDIUM,
+		"sash.hoverBorder": colors.GRAY_MEDIUM,
+
+		"editor.background": colors.GRAY_ALMOST_BLACK,
+		"editor.foreground": colors.GRAY_MEDIUM,
+		"editorLineNumber.foreground": colors.GRAY_DARK,
+		"editorLineNumber.activeForeground": colors.GRAY_MEDIUM_LIGHT,
+		"editorLineNumber.dimmedForeground": colors.GRAY_MEDIUM_DARK,
+		"editorCursor.background": colors.GRAY_MEDIUM_LIGHT,
+		"editorCursor.foreground": colors.ACCENT_ORANGE,
+
+		"textLink.activeForeground": colors.GRAY_MEDIUM_DARK,
+		"textLink.foreground": colors.GRAY_MEDIUM,
+		"textPreformat.foreground": colors.GRAY_MEDIUM,
+		"textSeparator.foreground": colors.GRAY_DEEPER,
+
+		"toolbar.hoverBackground": colors.GRAY_DEEP,
+		"toolbar.hoverOutline": colors.GRAY_MEDIUM_LIGHT,
+		"toolbar.activeBackground": colors.GRAY_DEEP,
+
+		"button.background": colors.GRAY_DEEPER,
+		"button.foreground": colors.GRAY_MEDIUM_LIGHT,
+		"button.border": colors.GRAY_DARK,
+		"button.separator": colors.GRAY_BLACK,
+		"button.hoverBackground": colors.GRAY_DEEPER,
+		"button.secondaryForeground": colors.GRAY_MEDIUM_DARK,
+		"button.secondaryBackground": colors.GRAY_DEEPER,
+		"button.secondaryHoverBackground": colors.GRAY_DEEP,
+		"checkbox.background": colors.GRAY_DEEPER,
+		"checkbox.foreground": colors.GRAY_MEDIUM_LIGHT,
+		"checkbox.border": colors.GRAY_DEEP,
+		"checkbox.selectBackground": colors.GRAY_DEEP,
+		"checkbox.selectBorder": colors.GRAY_DEEP,
+
+		// Dropdown control
+		"dropdown.background": colors.GRAY_DEEPER,
+		"dropdown.listBackground": colors.GRAY_DEEP,
+		"dropdown.border": colors.GRAY_DEEP,
+		"dropdown.foreground": colors.GRAY_MEDIUM_LIGHT,
+		"input.background": colors.GRAY_DEEPER,
+		"input.border": colors.GRAY_DEEP,
+		"input.foreground": colors.GRAY_MEDIUM_LIGHT,
+		"input.placeholderForeground": colors.GRAY_MEDIUM_DARK,
+		"inputOption.activeBackground": colors.GRAY_DEEP,
+		"inputOption.activeBorder": colors.GRAY_DEEP,
+		"inputOption.activeForeground": colors.GRAY_MEDIUM_LIGHT,
+		"inputOption.hoverBackground": colors.GRAY_DEEPER,
+
+		// Scrollbar control
+		"scrollbar.shadow": colors.GRAY_DEEPER,
+		"scrollbarSlider.activeBackground": transparency.nearlySolid(
+			colors.GRAY_DEEP,
+		),
+		"scrollbarSlider.background": transparency.nearlySolid(colors.GRAY_DEEP),
+		"scrollbarSlider.hoverBackground": transparency.nearlySolid(
+			colors.GRAY_DARK,
+		),
+
+		// Badge
+		"badge.foreground": colors.GRAY_MEDIUM_LIGHT,
+		"badge.background": colors.GRAY_DEEP,
+
+		// Progress bar
+		"progressBar.background": colors.ACCENT_ORANGE,
+
+		// Lists and trees
+		"list.activeSelectionBackground": colors.GRAY_DEEP,
+		"list.activeSelectionForeground": colors.GRAY_MEDIUM_LIGHT,
+		"list.activeSelectionIconForeground": colors.GRAY_MEDIUM_LIGHT,
+		"list.dropBackground": colors.GRAY_DEEP,
+		"list.focusBackground": colors.GRAY_DEEP,
+		"list.focusForeground": colors.GRAY_MEDIUM_LIGHT,
+		"list.focusHighlightForeground": colors.GRAY_MEDIUM_LIGHT,
+		"list.focusOutline": colors.GRAY_MEDIUM,
+		"list.focusAndSelectionOutline": colors.GRAY_MEDIUM,
+		"list.highlightForeground": colors.GRAY_MEDIUM_LIGHT,
+		"list.hoverBackground": colors.GRAY_DEEP,
+		"list.hoverForeground": colors.GRAY_MEDIUM_LIGHT,
+		"list.inactiveSelectionBackground": colors.GRAY_DEEP,
+		"list.inactiveSelectionForeground": colors.GRAY_MEDIUM_LIGHT,
+		"list.inactiveSelectionIconForeground": colors.GRAY_MEDIUM_LIGHT,
+		"list.inactiveFocusBackground": transparency.nearlyTransparent(
+			colors.ACCENT_ORANGE,
+		),
+		"list.inactiveFocusOutline": transparency.nearlySolid(colors.GRAY_DEEP),
+		"list.invalidItemForeground": colors.RED_MEDIUM_DARK,
+		"listFilterWidget.background": colors.GRAY_DEEPER,
+		"listFilterWidget.outline": colors.GRAY_DEEP,
+		"listFilterWidget.noMatchesOutline": colors.RED_MEDIUM_DARK,
+		"listFilterWidget.shadow": colors.GRAY_DEEPER,
+		"list.filterMatchBackground": colors.GRAY_DEEP,
+		"list.filterMatchBorder": colors.GRAY_DEEP,
+		"list.deemphasizedForeground": colors.GRAY_MEDIUM_DARK,
+		"tree.indentGuidesStroke": colors.GRAY_DEEP,
+		"tree.inactiveIndentGuidesStroke": colors.GRAY_DEEP,
+		"tree.tableColumnsBorder": colors.GRAY_DEEP,
+		"tree.tableOddRowsBackground": colors.GRAY_DEEP,
+
+		// Activity Bar
+		"activityBar.background": colors.GRAY_DEEP,
+		"activityBar.dropBorder": colors.ACCENT_ORANGE,
+		"activityBar.foreground": colors.GRAY_MEDIUM_LIGHT,
+		"activityBar.inactiveForeground": colors.GRAY_MEDIUM_DARK,
+		"activityBar.border": colors.GRAY_DEEP,
+		"activityBarBadge.background": transparency.nearlySolid(
+			colors.ACCENT_ORANGE,
+		),
+		"activityBarBadge.foreground": colors.GRAY_MEDIUM_LIGHT,
+		"activityBar.activeBorder": colors.ACCENT_ORANGE,
+		"activityBar.activeBackground": colors.GRAY_DARK,
+		"activityBar.activeFocusBorder": colors.GRAY_DARK,
+
+		// Profiles
+		"profileBadge.background": colors.ACCENT_ORANGE,
+		"profileBadge.foreground": colors.GRAY_MEDIUM_LIGHT,
+
+		// Side Bar
+		"sideBar.background": colors.GRAY_DEEPER,
+		"sideBar.foreground": colors.GRAY_MEDIUM,
+		"sideBar.border": colors.GRAY_DEEP,
+		"sideBar.dropBackground": colors.GRAY_DEEP,
+		"sideBarTitle.foreground": colors.GRAY_MEDIUM_LIGHT,
+		"sideBarSectionHeader.background": colors.GRAY_DEEP,
+		"sideBarSectionHeader.foreground": colors.GRAY_MEDIUM_LIGHT,
+		"sideBarSectionHeader.border": colors.GRAY_DEEP,
+
+		// Minimap
+		"minimap.findMatchHighlight": colors.ACCENT_ORANGE,
+		"minimap.selectionHighlight": colors.GRAY_DEEPER,
+		"minimap.background": colors.GRAY_DEEPER,
+		"minimap.selectionOccurrenceHighlight": colors.ACCENT_ORANGE,
+		"minimap.foregroundOpacity": "#000000c0",
+		"minimapSlider.background": transparency.halfwayTransparent(
+			colors.GRAY_DEEPER,
+		),
+		"minimapSlider.hoverBackground": transparency.halfwayTransparent(
+			colors.GRAY_DEEP,
+		),
+		"minimapSlider.activeBackground": transparency.nearlyTransparent(
+			colors.GRAY_DEEP,
+		),
+
+		// Editor Groups & Tabs
+		"editorGroup.border": colors.GRAY_DEEP,
+		"editorGroup.dropBackground": colors.GRAY_DEEP,
+		"editorGroupHeader.noTabsBackground": colors.GRAY_DEEP,
+		"editorGroupHeader.tabsBackground": colors.GRAY_DEEP,
+		"editorGroupHeader.tabsBorder": colors.GRAY_DEEP,
+		"editorGroupHeader.border": colors.GRAY_DEEP,
+		"editorGroup.emptyBackground": colors.GRAY_DEEP,
+		"editorGroup.focusedEmptyBorder": colors.GRAY_MEDIUM,
+		"editorGroup.dropIntoPromptForeground": colors.GRAY_DEEP,
+		"editorGroup.dropIntoPromptBackground": colors.GRAY_DEEP,
+		"editorGroup.dropIntoPromptBorder": colors.GRAY_DEEP,
+		"tab.activeBackground": colors.GRAY_DARK,
+		"tab.unfocusedActiveBackground": colors.GRAY_DARK,
+		"tab.activeForeground": colors.GRAY_MEDIUM_LIGHT,
+		"tab.border": colors.GRAY_DARK,
+		"tab.activeBorder": colors.GRAY_DARK,
+		"tab.unfocusedActiveBorder": colors.GRAY_DARK,
+		"tab.activeBorderTop": colors.ACCENT_ORANGE,
+		"tab.unfocusedActiveBorderTop": colors.ACCENT_ORANGE,
+		"tab.lastPinnedBorder": colors.GRAY_DARK,
+		"tab.inactiveBackground": colors.GRAY_DEEP,
+		"tab.unfocusedInactiveBackground": colors.GRAY_DEEP,
+		"tab.inactiveForeground": colors.GRAY_MEDIUM,
+		"tab.unfocusedActiveForeground": colors.GRAY_MEDIUM_LIGHT,
+		"tab.unfocusedInactiveForeground": colors.GRAY_MEDIUM,
+		"tab.hoverBackground": colors.GRAY_DARK,
+		"tab.unfocusedHoverBackground": colors.GRAY_DARK,
+		"tab.hoverForeground": colors.GRAY_MEDIUM_LIGHT,
+		"tab.unfocusedHoverForeground": colors.GRAY_MEDIUM_LIGHT,
+		"tab.hoverBorder": colors.GRAY_DARK,
+		"tab.unfocusedHoverBorder": colors.GRAY_DARK,
+		"tab.activeModifiedBorder": colors.ACCENT_ORANGE,
+		"tab.inactiveModifiedBorder": colors.ACCENT_ORANGE,
+		"tab.unfocusedActiveModifiedBorder": colors.ACCENT_ORANGE,
+		"tab.unfocusedInactiveModifiedBorder": colors.ACCENT_ORANGE,
+		"editorPane.background": colors.GRAY_DEEPER,
+		"sideBySideEditor.horizontalBorder": colors.GRAY_DEEP,
+		"sideBySideEditor.verticalBorder": colors.GRAY_DEEP,
+
+		// Selection colors
+		"editor.selectionBackground": transparency.nearlySolid(colors.GRAY_DEEP),
+		"editor.selectionForeground": colors.GRAY_MEDIUM_LIGHT,
+		"editor.inactiveSelectionBackground": transparency.nearlySolid(
+			colors.GRAY_DEEP,
+		),
+		"editor.selectionHighlightBackground": transparency.nearlySolid(
+			colors.GRAY_DEEPER,
+		),
+		"editor.selectionHighlightBorder": transparency.halfwayTransparent(
+			colors.GRAY_DEEP,
+		),
+
+		// Word highlight colors
+		"editor.wordHighlightBackground": transparency.halfwayTransparent(
+			colors.GRAY_MEDIUM_DARK,
+		),
+		"editor.wordHighlightBorder": transparency.halfwayTransparent(
+			colors.GRAY_DEEP,
+		),
+		"editor.wordHighlightStrongBackground": transparency.halfwayTransparent(
+			colors.GRAY_DEEP,
+		),
+		"editor.wordHighlightStrongBorder": transparency.halfwayTransparent(
+			colors.GRAY_DEEP,
+		),
+		"editor.wordHighlightTextBackground": transparency.halfwayTransparent(
+			colors.GRAY_DEEP,
+		),
+		"editor.wordHighlightTextBorder": transparency.nearlyTransparent(
+			colors.GRAY_DEEP,
+		),
+
+		// Find colors
+		"editor.findMatchBackground": transparency.halfwayTransparent(
+			colors.GRAY_DEEP,
+		),
+		"editor.findMatchHighlightBackground": transparency.nearlyTransparent(
+			colors.GRAY_DEEP,
+		),
+		"editor.findRangeHighlightBackground": colors.GRAY_DEEP,
+		"editor.findMatchBorder": transparency.halfwayTransparent(colors.GRAY_DEEP),
+		"editor.findMatchHighlightBorder": transparency.halfwayTransparent(
+			colors.GRAY_DEEP,
+		),
+		"editor.findRangeHighlightBorder": colors.GRAY_DEEP,
+
+		// Search Results
+		"search.resultsInfoForeground": colors.GRAY_MEDIUM_DARK,
+		"searchEditor.findMatchBackground": colors.ACCENT_ORANGE,
+		"searchEditor.findMatchBorder": colors.GRAY_DEEP,
+		"searchEditor.textInputBorder": colors.GRAY_DEEP,
+
+		// Hover Highlight
+		"editor.hoverHighlightBackground": transparency.nearlySolid(
+			colors.GRAY_DEEP,
+		),
+
+		// Line Highlight
+		"editor.lineHighlightBackground": transparency.nearlyTransparent(
+			colors.GRAY_DEEP,
+		),
+		"editor.lineHighlightBorder": transparency.halfwayTransparent(
+			colors.GRAY_DEEP,
+		),
+
+		// Unicode Highlight
+		"editorUnicodeHighlight.border": colors.ACCENT_ORANGE,
+		"editorUnicodeHighlight.background": transparency.halfwayTransparent(
+			colors.GRAY_DEEP,
+		),
+
+		// Link
+		"editorLink.activeForeground": colors.GRAY_MEDIUM,
+
+		// Range Highlight
+		"editor.rangeHighlightBackground": transparency.halfwayTransparent(
+			colors.GRAY_DEEP,
+		),
+		"editor.rangeHighlightBorder": colors.ACCENT_ORANGE,
+
+		// Symbol Highlight
+		"editor.symbolHighlightBackground": colors.ACCENT_ORANGE,
+		"editor.symbolHighlightBorder": colors.GRAY_DEEP,
+
+		// Editor Whitespaces
+		"editorWhitespace.foreground": colors.GRAY_DARK,
+
+		// Editor Indent Guides
+		"editorIndentGuide.background": colors.GRAY_DARK,
+		"editorIndentGuide.activeBackground": colors.ACCENT_ORANGE,
+
+		// Editor Inline Hints
+		"editorInlayHint.background": transparency.halfwayTransparent(
+			colors.GRAY_DEEP,
+		),
+		"editorInlayHint.foreground": colors.GRAY_MEDIUM,
+
+		// Editor Rulers
+		"editorRuler.foreground": colors.GRAY_DEEP,
+
+		// Linked Editing Mode
+		"editor.linkedEditingBackground": colors.GRAY_DEEPER,
+
+		// CodeLens
+		"editorCodeLens.foreground": colors.GRAY_DARK,
+
+		// Lightbulb
+		"editorLightBulb.foreground": colors.GRAY_DEEP,
+		"editorLightBulbAutoFix.foreground": colors.GRAY_DEEP,
+
+		// Bracket matches
+		"editorBracketMatch.background": transparency.quarterTransparent(
+			colors.ACCENT_ORANGE,
+		),
+		"editorBracketMatch.border": transparency.quarterTransparent(
+			colors.ACCENT_ORANGE,
+		),
+
+		// Bracket pair colorization
+		"editorBracketHighlight.foreground1": colors.ORANGE_LIGHT,
+		"editorBracketHighlight.foreground2": colors.LIME_LIGHT,
+		"editorBracketHighlight.foreground3": colors.BLUE_LIGHT,
+		"editorBracketHighlight.foreground4": colors.RED_LIGHT,
+		"editorBracketHighlight.foreground5": colors.CYAN_LIGHT,
+		"editorBracketHighlight.foreground6": colors.AMBER_LIGHT,
+		"editorBracketHighlight.unexpectedBracket.foreground":
+			transparency.halfwayTransparent(colors.AMBER_MEDIUM_LIGHT),
+
+		// Bracket pair guides
+		"editorBracketPairGuide.activeBackground1": colors.ORANGE_LIGHT,
+		"editorBracketPairGuide.activeBackground2": colors.LIME_LIGHT,
+		"editorBracketPairGuide.activeBackground3": colors.BLUE_LIGHT,
+		"editorBracketPairGuide.activeBackground4": colors.RED_LIGHT,
+		"editorBracketPairGuide.activeBackground5": colors.CYAN_LIGHT,
+		"editorBracketPairGuide.activeBackground6": colors.AMBER_LIGHT,
+		"editorBracketPairGuide.background1": colors.ORANGE_LIGHT,
+		"editorBracketPairGuide.background2": colors.LIME_LIGHT,
+		"editorBracketPairGuide.background3": colors.BLUE_LIGHT,
+		"editorBracketPairGuide.background4": colors.RED_LIGHT,
+		"editorBracketPairGuide.background5": colors.CYAN_LIGHT,
+		"editorBracketPairGuide.background6": colors.AMBER_LIGHT,
+
+		// Folding
+		"editor.foldBackground": transparency.nearlyTransparent(colors.GRAY_DEEPER),
+
+		// Overview ruler
+		"editorOverviewRuler.background": colors.GRAY_DEEPER,
+		"editorOverviewRuler.border": colors.GRAY_DEEP,
+		"editorOverviewRuler.findMatchForeground": "#fe420d66",
+		"editorOverviewRuler.rangeHighlightForeground": "#fe420d66",
+		"editorOverviewRuler.selectionHighlightForeground": "#cbd5e066",
+		"editorOverviewRuler.wordHighlightForeground": "#fe420d66",
+		"editorOverviewRuler.wordHighlightStrongForeground": "#48BB7866",
+		"editorOverviewRuler.wordHighlightTextForeground": "#3c485666",
+
+		"editorOverviewRuler.bracketMatchForeground":
+			transparency.halfwayTransparent(colors.ACCENT_ORANGE),
+
+		// Errors
+		errorForeground: colors.ERROR_FOREGROUND,
+		"editorError.foreground": colors.ERROR_FOREGROUND,
+		"editorError.border": colors.ERROR_BACKGROUND,
+		"editorError.background": transparency.quarterTransparent(
+			colors.ERROR_BACKGROUND,
+		),
+		"problemsErrorIcon.foreground": colors.ERROR_FOREGROUND,
+		"editorOverviewRuler.errorForeground": colors.ERROR_FOREGROUND,
+		"inputValidation.errorBackground": transparency.quarterTransparent(
+			colors.ERROR_BACKGROUND,
+		),
+		"inputValidation.errorForeground": colors.ERROR_FOREGROUND,
+		"inputValidation.errorBorder": colors.ERROR_BACKGROUND,
+		"list.errorForeground": colors.ERROR_FOREGROUND,
+		"minimap.errorHighlight": colors.ERROR_BACKGROUND,
+		"editorMarkerNavigationError.background": transparency.quarterTransparent(
+			colors.ERROR_BACKGROUND,
+		),
+		"editorMarkerNavigationError.headerBackground":
+			transparency.quarterTransparent(colors.ERROR_BACKGROUND),
+		"statusBarItem.errorBackground": transparency.quarterTransparent(
+			colors.ERROR_BACKGROUND,
+		),
+		"statusBarItem.errorForeground": colors.ERROR_FOREGROUND,
+		"notificationsErrorIcon.foreground": colors.ERROR_FOREGROUND,
+		"testing.message.error.decorationForeground": colors.ERROR_FOREGROUND,
+		"testing.message.error.lineBackground": transparency.quarterTransparent(
+			colors.ERROR_BACKGROUND,
+		),
+		"debugConsole.errorForeground": colors.ERROR_FOREGROUND,
+		"notebookStatusErrorIcon.foreground": colors.ERROR_FOREGROUND,
+		"debugTokenExpression.error": colors.ERROR_FOREGROUND,
+		"testing.iconFailed": colors.FAILURE_BACKGROUND,
+		"testing.iconErrored": colors.ERROR_FOREGROUND,
+
+		// Warnings
+		"editorWarning.foreground": colors.WARNING_FOREGROUND,
+		"editorWarning.border": colors.WARNING_BACKGROUND,
+		"editorWarning.background": transparency.quarterTransparent(
+			colors.WARNING_BACKGROUND,
+		),
+		"problemsWarningIcon.foreground": colors.WARNING_FOREGROUND,
+		"editorOverviewRuler.warningForeground": colors.WARNING_FOREGROUND,
+		"inputValidation.warningBackground": transparency.quarterTransparent(
+			colors.WARNING_BACKGROUND,
+		),
+		"inputValidation.warningForeground": colors.WARNING_FOREGROUND,
+		"inputValidation.warningBorder": colors.WARNING_BACKGROUND,
+		"list.warningForeground": colors.WARNING_FOREGROUND,
+		"minimap.warningHighlight": colors.WARNING_FOREGROUND,
+		"editorMarkerNavigationWarning.background": transparency.quarterTransparent(
+			colors.WARNING_BACKGROUND,
+		),
+		"editorMarkerNavigationWarning.headerBackground":
+			transparency.quarterTransparent(colors.WARNING_BACKGROUND),
+		"statusBarItem.warningBackground": transparency.quarterTransparent(
+			colors.WARNING_BACKGROUND,
+		),
+		"statusBarItem.warningForeground": colors.WARNING_FOREGROUND,
+		"notificationsWarningIcon.foreground": colors.WARNING_FOREGROUND,
+		"debugConsole.warningForeground": colors.WARNING_FOREGROUND,
+
+		// Info
+		"editorInfo.foreground": colors.INFO_FOREGROUND,
+		"editorInfo.border": colors.INFO_BACKGROUND,
+		"editorInfo.background": transparency.quarterTransparent(
+			colors.INFO_BACKGROUND,
+		),
+		"problemsInfoIcon.foreground": colors.INFO_FOREGROUND,
+		"editorOverviewRuler.infoForeground": colors.INFO_FOREGROUND,
+		"inputValidation.infoBackground": transparency.quarterTransparent(
+			colors.INFO_BACKGROUND,
+		),
+		"inputValidation.infoForeground": colors.INFO_FOREGROUND,
+		"inputValidation.infoBorder": colors.INFO_BACKGROUND,
+		"editorMarkerNavigationInfo.background": transparency.quarterTransparent(
+			colors.INFO_BACKGROUND,
+		),
+		"editorMarkerNavigationInfo.headerBackground":
+			transparency.quarterTransparent(colors.INFO_BACKGROUND),
+		"notificationsInfoIcon.foreground": colors.INFO_FOREGROUND,
+		"testing.message.info.decorationForeground": colors.INFO_FOREGROUND,
+		"testing.message.info.lineBackground": transparency.quarterTransparent(
+			colors.INFO_BACKGROUND,
+		),
+		"debugConsole.infoForeground": colors.INFO_FOREGROUND,
+
+		// Hints
+		"editorHint.foreground": colors.HINT_FOREGROUND,
+		"editorHint.border": colors.HINT_BACKGROUND,
+
+		// Added
+		"editorGutter.addedBackground": transparency.quarterTransparent(
+			colors.ADDED_BACKGROUND,
+		),
+		"gitDecoration.addedResourceForeground": colors.ADDED_FOREGROUND,
+		"minimapGutter.addedBackground": transparency.quarterTransparent(
+			colors.ADDED_BACKGROUND,
+		),
+		"editorOverviewRuler.addedForeground": colors.ADDED_FOREGROUND,
+
+		// Modified
+		"editorGutter.modifiedBackground": transparency.quarterTransparent(
+			colors.MODIFIED_BACKGROUND,
+		),
+		"settings.modifiedItemIndicator": transparency.halfwayTransparent(
+			colors.AMBER_MEDIUM_LIGHT,
+		),
+		"gitDecoration.modifiedResourceForeground": colors.MODIFIED_FOREGROUND,
+		"gitDecoration.renamedResourceForeground": colors.MODIFIED_FOREGROUND,
+		"gitDecoration.stageModifiedResourceForeground": colors.MODIFIED_FOREGROUND,
+		"minimapGutter.modifiedBackground": transparency.quarterTransparent(
+			colors.MODIFIED_BACKGROUND,
+		),
+		"editorOverviewRuler.modifiedForeground": colors.MODIFIED_FOREGROUND,
+
+		// Deleted
+		"editorGutter.deletedBackground": transparency.quarterTransparent(
+			colors.DELETED_BACKGROUND,
+		),
+		"gitDecoration.deletedResourceForeground": colors.DELETED_FOREGROUND,
+		"gitDecoration.stageDeletedResourceForeground": colors.DELETED_FOREGROUND,
+		"minimapGutter.deletedBackground": transparency.quarterTransparent(
+			colors.DELETED_BACKGROUND,
+		),
+		"editorOverviewRuler.deletedForeground": colors.DELETED_FOREGROUND,
+
+		// Colors for unused source code
+		"editorUnnecessaryCode.border": colors.GRAY_DEEP,
+		"editorUnnecessaryCode.opacity": transparency.nearlySolid(colors.GRAY_DEEP),
+
+		// Colors for gutter
+		"editorGutter.background": colors.GRAY_ALMOST_BLACK,
+
+		"editorGutter.commentRangeForeground": colors.GRAY_DEEP,
+		"editorGutter.commentGlyphForeground": colors.GRAY_DEEP,
+		"editorGutter.commentUnresolvedGlyphForeground":
+			transparency.halfwayTransparent(colors.AMBER_MEDIUM_LIGHT),
+		"editorGutter.foldingControlForeground": colors.GRAY_MEDIUM_LIGHT,
+
+		// Colors for editor comments widget
+		"editorCommentsWidget.resolvedBorder": colors.LIME_MEDIUM,
+		"editorCommentsWidget.unresolvedBorder": colors.AMBER_MEDIUM_LIGHT,
+		"editorCommentsWidget.rangeBackground": colors.GRAY_DEEP,
+		"editorCommentsWidget.rangeBorder": colors.GRAY_DEEP,
+		"editorCommentsWidget.rangeActiveBackground": colors.GRAY_DEEP,
+		"editorCommentsWidget.rangeActiveBorder": colors.GRAY_DEEP,
+
+		// Colors for diff editor
+		"diffEditor.insertedTextBackground": transparency.nearlyTransparent(
+			colors.LIME_MEDIUM_LIGHT,
+		),
+		"diffEditor.insertedTextBorder": colors.LIME_MEDIUM,
+		"diffEditor.removedTextBackground": transparency.nearlyTransparent(
+			colors.RED_MEDIUM_LIGHT,
+		),
+		"diffEditor.removedTextBorder": colors.RED_MEDIUM_DARK,
+		"diffEditor.border": colors.GRAY_DEEP,
+		"diffEditor.diagonalFill": colors.GRAY_DEEP,
+		"diffEditor.insertedLineBackground": transparency.nearlyTransparent(
+			colors.LIME_MEDIUM_DARK,
+		),
+		"diffEditor.removedLineBackground": transparency.nearlyTransparent(
+			colors.RED_MEDIUM_DARK,
+		),
+		"diffEditorGutter.insertedLineBackground": transparency.nearlySolid(
+			colors.LIME_MEDIUM,
+		),
+		"diffEditorGutter.removedLineBackground": transparency.nearlySolid(
+			colors.RED_MEDIUM_DARK,
+		),
+		"diffEditorOverview.insertedForeground": colors.LIME_MEDIUM,
+		"diffEditorOverview.removedForeground": colors.RED_MEDIUM_DARK,
+
+		// Editor widget colors
+		"editorWidget.foreground": colors.GRAY_MEDIUM_DARK,
+		"editorWidget.background": colors.GRAY_DEEP,
+		"editorWidget.border": colors.GRAY_DEEP,
+		"editorWidget.resizeBorder": colors.GRAY_DEEP,
+		"editorSuggestWidget.background": colors.GRAY_DEEP,
+		"editorSuggestWidget.border": colors.GRAY_DEEP,
+		"editorSuggestWidget.foreground": colors.GRAY_MEDIUM_DARK,
+		"editorSuggestWidget.focusHighlightForeground": colors.GRAY_MEDIUM_LIGHT,
+		"editorSuggestWidget.highlightForeground": colors.GRAY_MEDIUM_LIGHT,
+		"editorSuggestWidget.selectedBackground": colors.GRAY_DEEP,
+		"editorSuggestWidget.selectedForeground": colors.GRAY_MEDIUM_LIGHT,
+		"editorSuggestWidget.selectedIconForeground": colors.GRAY_MEDIUM_LIGHT,
+		"editorSuggestWidgetStatus.foreground": colors.GRAY_MEDIUM_LIGHT,
+		"editorHoverWidget.foreground": colors.GRAY_MEDIUM_DARK,
+		"editorHoverWidget.background": colors.GRAY_DEEPER,
+		"editorHoverWidget.border": colors.GRAY_DEEP,
+		"editorHoverWidget.highlightForeground": colors.GRAY_MEDIUM_LIGHT,
+		"editorHoverWidget.statusBarBackground": colors.GRAY_DEEPER,
+		"editorGhostText.border": transparency.nearlySolid(colors.GRAY_DEEP),
+		"editorGhostText.background": transparency.nearlySolid(colors.GRAY_DEEP),
+		"editorGhostText.foreground": colors.GRAY_DARK,
+		"editorStickyScroll.background": colors.GRAY_DEEPER,
+		"editorStickyScrollHover.background": colors.GRAY_DEEP,
+
+		// Debug Exception widget colors
+		"debugExceptionWidget.background": colors.GRAY_DEEPER,
+		"debugExceptionWidget.border": colors.GRAY_DEEP,
+
+		// Editor marker view colors
+		"editorMarkerNavigation.background": colors.GRAY_DEEPER,
+
+		// Peek view colors
+		"peekView.border": colors.GRAY_DEEP,
+		"peekViewEditor.background": colors.GRAY_DEEPER,
+		"peekViewEditorGutter.background": colors.GRAY_DEEPER,
+		"peekViewEditor.matchHighlightBackground": transparency.halfwayTransparent(
+			colors.GRAY_DEEP,
+		),
+		"peekViewEditor.matchHighlightBorder": transparency.nearlySolid(
+			colors.ACCENT_ORANGE,
+		),
+		"peekViewEditorStickyScroll.background": colors.GRAY_DEEPER,
+		"peekViewResult.background": colors.GRAY_DEEPER,
+		"peekViewResult.fileForeground": colors.GRAY_MEDIUM_LIGHT,
+		"peekViewResult.lineForeground": colors.GRAY_MEDIUM_DARK,
+		"peekViewResult.matchHighlightBackground": transparency.halfwayTransparent(
+			colors.GRAY_DEEP,
+		),
+		"peekViewResult.selectionBackground": colors.GRAY_DEEP,
+		"peekViewResult.selectionForeground": colors.GRAY_MEDIUM_LIGHT,
+		"peekViewTitle.background": colors.GRAY_DEEP,
+		"peekViewTitleDescription.foreground": colors.GRAY_MEDIUM_DARK,
+		"peekViewTitleLabel.foreground": colors.GRAY_MEDIUM_LIGHT,
+
+		// Merge conflicts colors
+		"merge.currentHeaderBackground": transparency.quarterTransparent(
+			colors.ACCENT_ORANGE,
+		),
+		"merge.currentContentBackground": transparency.nearlyTransparent(
+			colors.ACCENT_ORANGE,
+		),
+		"merge.incomingHeaderBackground": transparency.quarterTransparent(
+			colors.LIME_MEDIUM,
+		),
+		"merge.incomingContentBackground": transparency.nearlyTransparent(
+			colors.LIME_MEDIUM,
+		),
+		"merge.border": colors.GRAY_DEEP,
+		"merge.commonContentBackground": colors.GRAY_DEEP,
+		"merge.commonHeaderBackground": colors.GRAY_DEEP,
+		"editorOverviewRuler.currentContentForeground": colors.ACCENT_ORANGE,
+		"editorOverviewRuler.incomingContentForeground": colors.LIME_MEDIUM,
+		"editorOverviewRuler.commonContentForeground": colors.GRAY_DEEP,
+		"mergeEditor.change.background": transparency.nearlyTransparent(
+			colors.ACCENT_ORANGE,
+		),
+		"mergeEditor.change.word.background": transparency.quarterTransparent(
+			colors.ACCENT_ORANGE,
+		),
+		"mergeEditor.conflict.unhandledUnfocused.border": colors.AMBER_MEDIUM_LIGHT,
+		"mergeEditor.conflict.unhandledFocused.border": colors.AMBER_MEDIUM_LIGHT,
+		"mergeEditor.conflict.handledUnfocused.border": colors.AMBER_MEDIUM_LIGHT,
+		"mergeEditor.conflict.handledFocused.border": colors.AMBER_MEDIUM_LIGHT,
+		"mergeEditor.conflict.handled.minimapOverViewRuler": colors.ACCENT_ORANGE,
+		"mergeEditor.conflict.unhandled.minimapOverViewRuler": colors.ACCENT_ORANGE,
+		"mergeEditor.conflictingLines.background": transparency.nearlyTransparent(
+			colors.AMBER_MEDIUM_LIGHT,
+		),
+		"mergeEditor.changeBase.background": colors.GRAY_DEEP,
+		"mergeEditor.changeBase.word.background": colors.GRAY_DEEP,
+		"mergeEditor.conflict.input1.background": transparency.nearlyTransparent(
+			colors.ACCENT_ORANGE,
+		),
+		"mergeEditor.conflict.input2.background": transparency.nearlyTransparent(
+			colors.LIME_MEDIUM,
+		),
+
+		// Panel colors
+		"panel.background": colors.GRAY_DEEPER,
+		"panel.border": colors.GRAY_DEEP,
+		"panel.dropBorder": colors.GRAY_DEEP,
+		"panelTitle.activeBorder": colors.GRAY_DEEP,
+		"panelTitle.activeForeground": colors.GRAY_MEDIUM_LIGHT,
+		"panelTitle.inactiveForeground": colors.GRAY_MEDIUM_DARK,
+		"panelInput.border": colors.GRAY_DEEP,
+		"panelSection.border": colors.GRAY_DEEP,
+		"panelSection.dropBackground": colors.GRAY_DEEP,
+		"panelSectionHeader.background": colors.GRAY_DEEP,
+		"panelSectionHeader.foreground": colors.GRAY_MEDIUM_LIGHT,
+		"panelSectionHeader.border": colors.GRAY_DEEP,
+
+		// Status Bar colors
+		"statusBar.background": colors.GRAY_DEEP,
+		"statusBar.foreground": colors.GRAY_MEDIUM_DARK,
+		"statusBar.border": colors.GRAY_DEEP,
+		"statusBar.debuggingBackground": transparency.nearlySolid(
+			colors.AMBER_MEDIUM_DARK,
+		),
+		"statusBar.debuggingForeground": colors.GRAY_MEDIUM_LIGHT,
+		"statusBar.debuggingBorder": colors.GRAY_DEEP,
+		"statusBar.noFolderForeground": colors.GRAY_MEDIUM_DARK,
+		"statusBar.noFolderBackground": colors.GRAY_DEEPER,
+		"statusBar.noFolderBorder": colors.GRAY_DEEP,
+		"statusBarItem.activeBackground": colors.GRAY_DARK,
+		"statusBarItem.hoverBackground": colors.GRAY_DARK,
+		"statusBarItem.prominentForeground": colors.ACCENT_ORANGE,
+		"statusBarItem.prominentBackground": colors.GRAY_DEEP,
+		"statusBarItem.prominentHoverBackground": transparency.nearlyTransparent(
+			colors.ACCENT_ORANGE,
+		),
+		"statusBarItem.remoteBackground": colors.GRAY_DEEPER,
+		"statusBarItem.remoteForeground": colors.GRAY_MEDIUM_DARK,
+		"statusBarItem.compactHoverBackground": transparency.nearlyTransparent(
+			colors.ACCENT_ORANGE,
+		),
+		"statusBarItem.focusBorder": colors.GRAY_MEDIUM_DARK,
+		"statusBar.focusBorder": colors.GRAY_DARK,
+
+		// Title Bar colors
+		"titleBar.activeBackground": colors.GRAY_DEEP,
+		"titleBar.activeForeground": colors.GRAY_MEDIUM_LIGHT,
+		"titleBar.inactiveBackground": colors.GRAY_DEEP,
+		"titleBar.inactiveForeground": colors.GRAY_MEDIUM_DARK,
+		"titleBar.border": colors.GRAY_DEEP,
+
+		// Menu Bar colors
+		"menubar.selectionForeground": colors.GRAY_MEDIUM_LIGHT,
+		"menubar.selectionBackground": colors.ACCENT_ORANGE,
+		"menubar.selectionBorder": colors.ACCENT_ORANGE,
+		"menu.foreground": colors.GRAY_MEDIUM_LIGHT,
+		"menu.background": colors.GRAY_DEEPER,
+		"menu.selectionForeground": colors.GRAY_MEDIUM_LIGHT,
+		"menu.selectionBackground": colors.ACCENT_ORANGE,
+		"menu.selectionBorder": colors.ACCENT_ORANGE,
+		"menu.separatorBackground": colors.GRAY_DEEP,
+		"menu.border": colors.GRAY_DEEP,
+
+		// Command Center colors
+		"commandCenter.foreground": colors.GRAY_MEDIUM_LIGHT,
+		"commandCenter.activeForeground": colors.ACCENT_ORANGE,
+		"commandCenter.background": colors.GRAY_DEEPER,
+		"commandCenter.activeBackground": colors.GRAY_DEEP,
+		"commandCenter.border": colors.GRAY_MEDIUM_DARK,
+		"commandCenter.inactiveForeground": colors.GRAY_MEDIUM_LIGHT,
+		"commandCenter.inactiveBorder": colors.GRAY_MEDIUM_DARK,
+		"commandCenter.activeBorder": colors.GRAY_MEDIUM_LIGHT,
+
+		// Notification colors
+		"notificationCenter.border": colors.GRAY_DEEP,
+		"notificationCenterHeader.foreground": colors.GRAY_MEDIUM_LIGHT,
+		"notificationCenterHeader.background": colors.GRAY_DEEP,
+		"notificationToast.border": colors.GRAY_DARK,
+		"notifications.foreground": colors.GRAY_MEDIUM_DARK,
+		"notifications.background": colors.GRAY_DEEPER,
+		"notifications.border": colors.GRAY_DEEP,
+		"notificationLink.foreground": colors.GRAY_MEDIUM,
+
+		// Banner colors
+		"banner.background": colors.GRAY_DEEP,
+		"banner.foreground": colors.GRAY_MEDIUM_LIGHT,
+		"banner.iconForeground": colors.GRAY_MEDIUM_LIGHT,
+
+		// Extension colors
+		"extensionButton.prominentForeground": colors.GRAY_MEDIUM_LIGHT,
+		"extensionButton.prominentBackground": colors.GRAY_DEEP,
+		"extensionButton.prominentHoverBackground": colors.GRAY_DEEP,
+		"extensionButton.background": colors.GRAY_DEEP,
+		"extensionButton.foreground": colors.GRAY_MEDIUM_LIGHT,
+		"extensionButton.hoverBackground": colors.GRAY_DEEP,
+		"extensionButton.separator": colors.GRAY_DEEP,
+		"extensionBadge.remoteBackground": colors.GRAY_DEEP,
+		"extensionBadge.remoteForeground": colors.GRAY_MEDIUM_DARK,
+		"extensionIcon.starForeground": colors.GRAY_MEDIUM_DARK,
+		"extensionIcon.verifiedForeground": colors.LIME_MEDIUM,
+		"extensionIcon.preReleaseForeground": colors.GRAY_MEDIUM_LIGHT,
+		"extensionIcon.sponsorForeground": colors.GRAY_MEDIUM_DARK,
+
+		// Quick picker colors
+		"pickerGroup.border": colors.GRAY_DEEP,
+		"pickerGroup.foreground": colors.GRAY_MEDIUM_DARK,
+		"quickInput.background": colors.GRAY_DEEPER,
+		"quickInput.foreground": colors.GRAY_MEDIUM_DARK,
+		"quickInputList.focusBackground": colors.GRAY_DEEP,
+		"quickInputList.focusForeground": colors.GRAY_MEDIUM_LIGHT,
+		"quickInputList.focusIconForeground": colors.GRAY_MEDIUM_LIGHT,
+		"quickInputTitle.background": colors.GRAY_DEEP,
+
+		// Keybinding label colors
+		"keybindingLabel.background": colors.GRAY_MEDIUM_DARK,
+		"keybindingLabel.foreground": colors.GRAY_BLACK,
+		"keybindingLabel.border": colors.GRAY_MEDIUM_LIGHT,
+		"keybindingLabel.bottomBorder": colors.GRAY_DEEPER,
+
+		// Keyboard shortcut table colors
+		"keybindingTable.headerBackground": colors.GRAY_DEEPER,
+		"keybindingTable.rowsBackground": colors.GRAY_DEEPER,
+
+		// Integrated Terminal colors
+		"terminal.background": colors.GRAY_DEEPER,
+		"terminal.border": colors.GRAY_DEEP,
+		"terminal.foreground": colors.GRAY_MEDIUM_DARK,
+		"terminal.ansiBlack": colors.GRAY_BLACK,
+		"terminal.ansiBlue": colors.BLUE_MEDIUM,
+		"terminal.ansiBrightBlack": colors.GRAY_DEEPER,
+		"terminal.ansiBrightBlue": colors.BLUE_DEEP,
+		"terminal.ansiBrightCyan": colors.CYAN_DARK,
+		"terminal.ansiBrightGreen": colors.LIME_DEEP,
+		"terminal.ansiBrightMagenta": colors.ORANGE_DARK,
+		"terminal.ansiBrightRed": colors.RED_DARK,
+		"terminal.ansiBrightWhite": colors.GRAY_MEDIUM_DARK,
+		"terminal.ansiBrightYellow": colors.AMBER_DEEP,
+		"terminal.ansiCyan": colors.CYAN_MEDIUM,
+		"terminal.ansiGreen": colors.LIME_MEDIUM,
+		"terminal.ansiMagenta": colors.ORANGE_MEDIUM,
+		"terminal.ansiRed": colors.RED_MEDIUM,
+		"terminal.ansiWhite": colors.GRAY_LIGHT,
+		"terminal.ansiYellow": colors.AMBER_MEDIUM,
+		"terminal.selectionBackground": colors.GRAY_DEEP,
+		"terminal.selectionForeground": colors.GRAY_MEDIUM_DARK,
+		"terminal.inactiveSelectionBackground": colors.GRAY_DEEP,
+		"terminal.findMatchBackground": transparency.halfwayTransparent(
+			colors.ACCENT_ORANGE,
+		),
+		"terminal.findMatchBorder": colors.ACCENT_ORANGE,
+		"terminal.findMatchHighlightBackground": transparency.nearlyTransparent(
+			colors.ACCENT_ORANGE,
+		),
+		"terminal.findMatchHighlightBorder": transparency.halfwayTransparent(
+			colors.ACCENT_ORANGE,
+		),
+		"terminal.hoverHighlightBackground": transparency.halfwayTransparent(
+			colors.ACCENT_ORANGE,
+		),
+		"terminalCursor.background": colors.ACCENT_ORANGE,
+		"terminalCursor.foreground": colors.GRAY_DEEP,
+		"terminal.dropBackground": transparency.nearlyTransparent(
+			colors.ACCENT_ORANGE,
+		),
+		"terminal.tab.activeBorder": colors.ACCENT_ORANGE,
+		"terminalCommandDecoration.defaultBackground": colors.ACCENT_ORANGE,
+		"terminalCommandDecoration.successBackground":
+			transparency.quarterTransparent(colors.SUCCESS_BACKGROUND),
+		"terminalCommandDecoration.errorBackground":
+			transparency.quarterTransparent(colors.ERROR_BACKGROUND),
+		"terminalOverviewRuler.cursorForeground": colors.ACCENT_ORANGE,
+		"terminalOverviewRuler.findMatchForeground": colors.ACCENT_ORANGE,
+
+		// Debug colors
+		"debugToolBar.background": colors.GRAY_DEEP,
+		"debugToolBar.border": colors.GRAY_DARK,
+		"editor.stackFrameHighlightBackground": transparency.halfwayTransparent(
+			colors.AMBER_MEDIUM_LIGHT,
+		),
+		"editor.focusedStackFrameHighlightBackground":
+			transparency.halfwayTransparent(colors.LIME_MEDIUM),
+		"editor.inlineValuesForeground": colors.ACCENT_ORANGE,
+		"editor.inlineValuesBackground": transparency.halfwayTransparent(
+			colors.ACCENT_ORANGE,
+		),
+		"debugView.exceptionLabelForeground": colors.RED_MEDIUM_DARK,
+		"debugView.exceptionLabelBackground": transparency.halfwayTransparent(
+			colors.ACCENT_ORANGE,
+		),
+		"debugView.stateLabelForeground": colors.GRAY_DEEP,
+		"debugView.stateLabelBackground": transparency.halfwayTransparent(
+			colors.ACCENT_ORANGE,
+		),
+		"debugView.valueChangedHighlight": colors.LIME_MEDIUM,
+		"debugTokenExpression.name": colors.BLUE_LIGHT,
+		"debugTokenExpression.value": colors.BLUE_LIGHTER,
+		"debugTokenExpression.string": colors.BLUE_LIGHTER,
+		"debugTokenExpression.boolean": colors.LIME_LIGHT,
+		"debugTokenExpression.number": colors.LIME_LIGHT,
+
+		// Testing colors
+
+		"testing.iconPassed": colors.LIME_MEDIUM,
+		"testing.runAction": colors.ACCENT_ORANGE,
+		"testing.iconQueued": colors.AMBER_MEDIUM_LIGHT,
+		"testing.iconUnset": colors.GRAY_DEEP,
+		"testing.iconSkipped": colors.AMBER_MEDIUM_LIGHT,
+		"testing.peekBorder": colors.ACCENT_ORANGE,
+		"testing.peekHeaderBackground": colors.GRAY_DEEPER,
+
+		// Welcome page colors
+		"welcomePage.background": colors.GRAY_DEEPER,
+		"welcomePage.progress.background": colors.GRAY_DEEP,
+		"welcomePage.progress.foreground": colors.ACCENT_ORANGE,
+		"welcomePage.tileBackground": colors.GRAY_DEEP,
+		"welcomePage.tileHoverBackground": colors.GRAY_DEEP,
+		"welcomePage.tileBorder": colors.GRAY_DEEP,
+
+		// Walkthrough colors
+		"walkThrough.embeddedEditorBackground": colors.GRAY_DEEP,
+		"walkthrough.stepTitle.foreground": colors.ACCENT_ORANGE,
+
+		// Source Control colors
+		"scm.providerBorder": colors.GRAY_DEEP,
+
+		// Git colors
+		"gitDecoration.untrackedResourceForeground": colors.GRAY_MEDIUM_DARK,
+		"gitDecoration.ignoredResourceForeground": colors.NEUTRAL_DARK_GRAY,
+		"gitDecoration.conflictingResourceForeground": colors.AMBER_MEDIUM_LIGHT,
+		"gitDecoration.submoduleResourceForeground": colors.GRAY_DARK,
+
+		// Settings Editor colors
+		"settings.headerForeground": colors.NEUTRAL_GRAY,
+
+		"settings.dropdownBackground": colors.GRAY_DEEPER,
+		"settings.dropdownForeground": colors.GRAY_MEDIUM_DARK,
+		"settings.dropdownBorder": colors.GRAY_DEEP,
+		"settings.dropdownListBorder": colors.GRAY_DEEP,
+		"settings.checkboxBackground": colors.GRAY_DEEPER,
+		"settings.checkboxForeground": colors.GRAY_MEDIUM_DARK,
+		"settings.checkboxBorder": colors.GRAY_DEEP,
+		"settings.rowHoverBackground": colors.GRAY_DEEP,
+		"settings.textInputBackground": colors.GRAY_DEEPER,
+		"settings.textInputForeground": colors.GRAY_MEDIUM_DARK,
+		"settings.textInputBorder": colors.GRAY_DEEP,
+		"settings.numberInputBackground": colors.GRAY_DEEPER,
+		"settings.numberInputForeground": colors.GRAY_MEDIUM_DARK,
+		"settings.numberInputBorder": colors.GRAY_DEEP,
+		"settings.focusedRowBackground": colors.GRAY_DEEP,
+		"settings.focusedRowBorder": colors.ACCENT_ORANGE,
+		"settings.headerBorder": colors.GRAY_DEEP,
+		"settings.sashBorder": colors.GRAY_DEEP,
+		"settings.settingsHeaderHoverForeground": colors.ACCENT_ORANGE,
+
+		// Breadcrumbs colors
+		"breadcrumb.foreground": colors.GRAY_MEDIUM_DARK,
+		"breadcrumb.background": colors.GRAY_DEEPER,
+		"breadcrumb.focusForeground": colors.GRAY_MEDIUM_LIGHT,
+		"breadcrumb.activeSelectionForeground": colors.GRAY_MEDIUM_LIGHT,
+		"breadcrumbPicker.background": colors.GRAY_DEEP,
+
+		// Snippets colors
+		"editor.snippetTabstopHighlightBackground": colors.GRAY_DEEP,
+		"editor.snippetTabstopHighlightBorder": colors.ACCENT_ORANGE,
+		"editor.snippetFinalTabstopHighlightBackground": colors.GRAY_DEEP,
+		"editor.snippetFinalTabstopHighlightBorder": colors.ACCENT_ORANGE,
+
+		// Symbol Icons colors
+		"symbolIcon.arrayForeground": colors.ORANGE_MEDIUM_LIGHT,
+		"symbolIcon.booleanForeground": colors.BLUE_MEDIUM_LIGHT,
+		"symbolIcon.classForeground": colors.ORANGE_MEDIUM_LIGHT,
+		"symbolIcon.colorForeground": colors.BLUE_LIGHT,
+		"symbolIcon.constantForeground": colors.LIME_MEDIUM_LIGHT,
+		"symbolIcon.constructorForeground": colors.CYAN_LIGHT,
+		"symbolIcon.enumeratorForeground": colors.ORANGE_MEDIUM_LIGHT,
+		"symbolIcon.enumeratorMemberForeground": colors.BLUE_MEDIUM_LIGHT,
+		"symbolIcon.eventForeground": colors.GRAY_DEEP,
+		"symbolIcon.fieldForeground": colors.ORANGE_MEDIUM_LIGHT,
+		"symbolIcon.fileForeground": colors.AMBER_MEDIUM,
+		"symbolIcon.folderForeground": colors.AMBER_MEDIUM,
+		"symbolIcon.functionForeground": colors.CYAN_MEDIUM_LIGHT,
+		"symbolIcon.interfaceForeground": colors.ORANGE_MEDIUM_LIGHT,
+		"symbolIcon.keyForeground": colors.BLUE_MEDIUM_LIGHT,
+		"symbolIcon.keywordForeground": colors.RED_MEDIUM_LIGHT,
+		"symbolIcon.methodForeground": colors.CYAN_MEDIUM_LIGHT,
+		"symbolIcon.moduleForeground": colors.RED_MEDIUM_LIGHT,
+		"symbolIcon.namespaceForeground": colors.RED_MEDIUM_LIGHT,
+		"symbolIcon.nullForeground": colors.BLUE_MEDIUM_LIGHT,
+		"symbolIcon.numberForeground": colors.LIME_MEDIUM_LIGHT,
+		"symbolIcon.objectForeground": colors.ORANGE_MEDIUM_LIGHT,
+		"symbolIcon.operatorForeground": colors.BLUE_LIGHT,
+		"symbolIcon.packageForeground": colors.ORANGE_MEDIUM_LIGHT,
+		"symbolIcon.propertyForeground": colors.ORANGE_MEDIUM_LIGHT,
+		"symbolIcon.referenceForeground": colors.BLUE_MEDIUM_LIGHT,
+		"symbolIcon.snippetForeground": colors.BLUE_MEDIUM_LIGHT,
+		"symbolIcon.stringForeground": colors.BLUE_LIGHT,
+		"symbolIcon.structForeground": colors.ORANGE_MEDIUM_LIGHT,
+		"symbolIcon.textForeground": colors.BLUE_LIGHT,
+		"symbolIcon.typeParameterForeground": colors.BLUE_LIGHT,
+		"symbolIcon.unitForeground": colors.BLUE_MEDIUM_LIGHT,
+		"symbolIcon.variableForeground": colors.ORANGE_MEDIUM_LIGHT,
+
+		// Debug Icons colors
+		"debugIcon.breakpointForeground": colors.RED_MEDIUM_DARK,
+		"debugIcon.breakpointDisabledForeground": colors.GRAY_DARK,
+		"debugIcon.breakpointUnverifiedForeground": colors.GRAY_DARK,
+		"debugIcon.breakpointCurrentStackframeForeground": colors.LIME_MEDIUM,
+		"debugIcon.breakpointStackframeForeground": colors.GRAY_DARK,
+		"debugIcon.startForeground": colors.LIME_MEDIUM,
+		"debugIcon.pauseForeground": colors.AMBER_MEDIUM_LIGHT,
+		"debugIcon.stopForeground": colors.RED_MEDIUM_DARK,
+		"debugIcon.disconnectForeground": colors.RED_MEDIUM_DARK,
+		"debugIcon.restartForeground": colors.ORANGE_MEDIUM,
+		"debugIcon.stepOverForeground": colors.LIME_MEDIUM,
+		"debugIcon.stepIntoForeground": colors.AMBER_MEDIUM_LIGHT,
+		"debugIcon.stepOutForeground": colors.AMBER_MEDIUM_LIGHT,
+		"debugIcon.continueForeground": colors.LIME_MEDIUM,
+		"debugIcon.stepBackForeground": colors.AMBER_MEDIUM_LIGHT,
+		"debugConsole.sourceForeground": colors.AMBER_MEDIUM_LIGHT,
+		"debugConsoleInputIcon.foreground": colors.CYAN_MEDIUM_LIGHT,
+
+		// Notebook colors
+		"notebook.editorBackground": colors.GRAY_DEEPER,
+		"notebook.cellBorderColor": colors.GRAY_DEEP,
+		"notebook.cellHoverBackground": colors.GRAY_DEEPER,
+		"notebook.cellInsertionIndicator": colors.ACCENT_ORANGE,
+		"notebook.cellStatusBarItemHoverBackground": colors.GRAY_DEEP,
+		"notebook.cellToolbarSeparator": colors.GRAY_DEEP,
+		"notebook.cellEditorBackground": colors.GRAY_DEEPER,
+		"notebook.focusedCellBackground": colors.GRAY_DEEPER,
+		"notebook.focusedCellBorder": colors.GRAY_MEDIUM,
+		"notebook.focusedEditorBorder": colors.GRAY_MEDIUM,
+		"notebook.inactiveFocusedCellBorder": colors.GRAY_DEEP,
+		"notebook.inactiveSelectedCellBorder": colors.GRAY_DEEP,
+		"notebook.outputContainerBackgroundColor": colors.GRAY_DEEPER,
+		"notebook.outputContainerBorderColor": colors.GRAY_DEEP,
+		"notebook.selectedCellBackground": colors.GRAY_DEEP,
+		"notebook.selectedCellBorder": colors.GRAY_DEEP,
+		"notebook.symbolHighlightBackground": colors.ACCENT_ORANGE,
+		"notebookScrollbarSlider.activeBackground": colors.ACCENT_ORANGE,
+		"notebookScrollbarSlider.background": colors.GRAY_DEEP,
+		"notebookScrollbarSlider.hoverBackground": colors.GRAY_DEEP,
+
+		"notebookStatusRunningIcon.foreground": colors.ACCENT_ORANGE,
+		"notebookStatusSuccessIcon.foreground": colors.SUCCESS_FOREGROUND,
+		"notebookEditorOverviewRuler.runningCellForeground": colors.ACCENT_ORANGE,
+
+		// Chart colors
+		"charts.foreground": colors.GRAY_DEEP,
+		"charts.lines": colors.GRAY_DEEP,
+		"charts.red": colors.RED_MEDIUM_DARK,
+		"charts.blue": colors.BLUE_DEEP,
+		"charts.yellow": colors.AMBER_MEDIUM_LIGHT,
+		"charts.orange": colors.ORANGE_MEDIUM_LIGHT,
+		"charts.green": colors.LIME_MEDIUM,
+		"charts.purple": "#805AD5",
+
+		// Ports Colors
+		"ports.iconRunningProcessForeground": colors.LIME_MEDIUM,
+	},
+	semanticHighlighting: true,
+	semanticTokenColors: {
+		namespace: { foreground: colors.GRAY_PALER },
+		class: { foreground: colors.RED_MEDIUM_DARK },
+		"class.declaration": { underline: true },
+		interface: { foreground: colors.AMBER_LIGHTER },
+		"interface.declaration": { underline: true },
+		function: { foreground: colors.ACCENT_ORANGE, italic: true },
+		"function.declaration": { underline: true },
+		"function.async": { bold: true },
+		method: { foreground: colors.ORANGE_MEDIUM_DARK, italic: true },
+		"method.declaration": { underline: true },
+		variable: { foreground: colors.BLUE_MEDIUM },
+		"variable.readonly": {
+			foreground: colors.LIME_LIGHT,
+			italic: true,
+		},
+		"variable.declaration": { underline: true },
+		property: { foreground: colors.TEAL },
+		"property.declaration": {
+			underline: true,
+		},
+		string: { foreground: colors.GRAY_PALEST },
+		keyword: { foreground: colors.AMBER_MEDIUM_DARK, bold: true },
+		enum: { foreground: colors.AMBER_DARK },
+		enumMember: { foreground: colors.AMBER_MEDIUM_DARK },
+		typeParameter: { foreground: colors.BLUE_LIGHTER, italic: true },
+		regexp: { foreground: colors.RED_DEEP, underline: true },
+		comment: { foreground: colors.GRAY_MEDIUM_DARK, italic: true },
+		struct: { foreground: colors.GRAY_MEDIUM_LIGHT, bold: true },
+		type: { foreground: colors.AMBER_LIGHTER },
+		"type.declaration": { underline: true },
+		parameter: { foreground: colors.BLUE },
+		"parameter.declaration": { underline: true },
+		decorator: { foreground: colors.LIME_MEDIUM, bold: true },
+		event: { foreground: colors.ORANGE_MEDIUM, italic: true },
+		macro: { foreground: colors.GRAY_DARK, bold: true },
+		label: { foreground: colors.GRAY_MEDIUM, italic: true },
+		number: { foreground: colors.LIME_MEDIUM_LIGHT },
+		operator: { foreground: colors.AMBER_LIGHT, bold: true },
+	},
+	tokenColors: [
+		{
+			scope: ["variable", "meta.definition.variable"],
+			settings: {
+				foreground: colors.BLUE_MEDIUM,
+			},
+		},
+		{
+			scope: ["entity.name.type.class", "meta.class"],
+			settings: {
+				foreground: colors.RED_MEDIUM_DARK,
+			},
+		},
+		{
+			scope: ["entity.name.type.interface", "meta.interface"],
+			settings: {
+				foreground: colors.AMBER_LIGHT,
+			},
+		},
+		{
+			scope: ["variable.parameter"],
+			settings: {
+				foreground: colors.BLUE,
+			},
+		},
+		{
+			scope: ["storage.type"],
+			settings: {
+				foreground: colors.GRAY_PALEST,
+			},
+		},
+		{
+			scope: ["storage.type.function"],
+			settings: {
+				foreground: colors.ACCENT_ORANGE,
+			},
+		},
+		{
+			scope: ["entity.name.function"],
+			settings: {
+				foreground: colors.ACCENT_ORANGE,
+				fontStyle: "italic",
+			},
+		},
+		{
+			scope: [
+				"variable.other.property",
+				"support.type.property-name",
+				"meta.object-literal.key",
+			],
+			settings: {
+				foreground: colors.TEAL,
+			},
+		},
+		{
+			scope: ["variable.other.object"],
+			settings: {
+				foreground: colors.RED_MEDIUM_LIGHT,
+			},
+		},
+		{
+			scope: ["constant", "variable.other.constant"],
+			settings: {
+				foreground: colors.LIME_MEDIUM_LIGHT,
+			},
+		},
+		{
+			scope: ["string"],
+			settings: {
+				foreground: colors.GRAY_PALER,
+			},
+		},
+		{
+			scope: ["comment"],
+			settings: {
+				foreground: colors.GRAY_MEDIUM_DARK,
+				fontStyle: "italic",
+			},
+		},
+		{
+			scope: [
+				"keyword.control.import",
+				"keyword.control.export",
+				"keyword.control.from",
+				"keyword.control.as",
+			],
+			settings: {
+				foreground: colors.GRAY_MEDIUM,
+			},
+		},
+		{
+			scope: [
+				"keyword.operator.type",
+				"support.type",
+				"entity.name.type",
+				"meta.type.declaration",
+			],
+			settings: {
+				foreground: colors.AMBER_LIGHTER,
+			},
+		},
+		{
+			scope: [
+				"keyword.operator.ternary",
+				"keyword.operator.logical",
+				"keyword.operator.arithmetic",
+				"keyword.operator.comparison",
+				"keyword.operator.optional",
+				"keyword.operator.relational",
+				"punctuation.accessor.optional",
+				"keyword.operator.assignment",
+				"keyword.control.trycatch",
+				"keyword.control.conditional",
+				"keyword.control.switch",
+				"keyword.control.while",
+				"keyword.control.for",
+				"keyword.control.loop",
+				"markup.fenced_code",
+			],
+			settings: {
+				foreground: colors.AMBER_LIGHT,
+				fontStyle: "bold",
+			},
+		},
+		{
+			scope: [
+				"keyword.control.flow",
+				"keyword.generator.asterisk",
+				"keyword.operator.new",
+				"storage.modifier",
+				"meta.link.inline",
+				"markup.inline.raw",
+				"keyword.strong",
+				"meta.tag",
+			],
+			settings: {
+				foreground: colors.AMBER_LIGHT,
+			},
+		},
+		{
+			scope: [
+				"keyword.control.export",
+				"keyword.control.import",
+				"keyword.control.as",
+				"keyword.control.from",
+				"keyword",
+			],
+			settings: {
+				foreground: colors.AMBER_LIGHTEST,
+			},
+		},
+		{
+			scope: ["heading"],
+			settings: {
+				foreground: colors.GRAY_LIGHT,
+			},
+		},
+		{
+			scope: ["heading.1"],
+			settings: {
+				fontStyle: "bold",
+			},
+		},
+		{
+			scope: ["meta.paragraph.markdown"],
+			settings: {
+				foreground: colors.GRAY_MEDIUM_LIGHT,
+			},
+		},
+		{
+			scope: ["meta.link.inline"],
+			settings: {
+				foreground: colors.ORANGE_LIGHTER,
+			},
+		},
+	],
 };
 
 Bun.write(
-  "./themes/consolvis-dark-theme.json",
-  JSON.stringify(darkTheme, null, 2)
+	"./themes/consolvis-dark-theme.json",
+	JSON.stringify(darkTheme, null, 2),
 );

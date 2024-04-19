@@ -32,10 +32,6 @@ We plan to update this theme and make it better. Your feedback would be valuable
 
 ![Sample 3](https://raw.githubusercontent.com/Consolvis/consolvis-vscode-theme/main/assets/sample3.png)
 
-### TSX
-
-![Sample 4](https://raw.githubusercontent.com/Consolvis/consolvis-vscode-theme/main/assets/sample4.png)
-
 <hr>
 
 ## Installation
