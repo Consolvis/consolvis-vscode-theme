@@ -6,8 +6,8 @@ const darkTheme = {
 	type: "dark",
 	colors: {
 		// Base colors
-		focusBorder: colors.GRAY_DARK,
-		foreground: colors.GRAY_MEDIUM_LIGHT,
+		focusBorder: colors.GRAY_MEDIUM,
+		foreground: colors.GRAY_LIGHT,
 		descriptionForeground: colors.GRAY_MEDIUM,
 
 		disabledForeground: colors.GRAY_MEDIUM_DARK,
@@ -25,7 +25,7 @@ const darkTheme = {
 		"editorCursor.background": colors.GRAY_MEDIUM_LIGHT,
 		"editorCursor.foreground": colors.ACCENT_ORANGE,
 
-		"textLink.activeForeground": colors.GRAY_MEDIUM_DARK,
+		"textLink.activeForeground": colors.GRAY_MEDIUM_LIGHT,
 		"textLink.foreground": colors.GRAY_MEDIUM,
 		"textPreformat.foreground": colors.GRAY_MEDIUM,
 		"textSeparator.foreground": colors.GRAY_DEEPER,
@@ -505,28 +505,29 @@ const darkTheme = {
 		"editorCommentsWidget.rangeActiveBorder": colors.GRAY_DEEP,
 
 		// Colors for diff editor
-		"diffEditor.insertedTextBackground": transparency.nearlyTransparent(
+		"diffEditor.diagonalFill": colors.GRAY_DEEP,
+		"diffEditor.insertedTextBackground": transparency.halfwayTransparent(
 			colors.LIME_MEDIUM_LIGHT,
 		),
-		"diffEditor.insertedTextBorder": colors.LIME_MEDIUM,
-		"diffEditor.removedTextBackground": transparency.nearlyTransparent(
+
+		"diffEditor.removedTextBackground": transparency.halfwayTransparent(
 			colors.RED_MEDIUM_LIGHT,
 		),
-		"diffEditor.removedTextBorder": colors.RED_MEDIUM_DARK,
-		"diffEditor.border": colors.GRAY_DEEP,
-		"diffEditor.diagonalFill": colors.GRAY_DEEP,
+
 		"diffEditor.insertedLineBackground": transparency.nearlyTransparent(
 			colors.LIME_MEDIUM_DARK,
 		),
 		"diffEditor.removedLineBackground": transparency.nearlyTransparent(
 			colors.RED_MEDIUM_DARK,
 		),
-		"diffEditorGutter.insertedLineBackground": transparency.nearlySolid(
-			colors.LIME_MEDIUM,
+		"diffEditorGutter.insertedLineBackground": transparency.nearlyTransparent(
+			colors.LIME_MEDIUM_DARK,
 		),
-		"diffEditorGutter.removedLineBackground": transparency.nearlySolid(
+		"diffEditorGutter.removedLineBackground": transparency.nearlyTransparent(
 			colors.RED_MEDIUM_DARK,
 		),
+		"diffEditor.border": colors.GRAY_DEEP,
+
 		"diffEditorOverview.insertedForeground": colors.LIME_MEDIUM,
 		"diffEditorOverview.removedForeground": colors.RED_MEDIUM_DARK,
 

@@ -1,7 +1,7 @@
-// Accent Color
+
 export const ACCENT_ORANGE = "#fe420d";
 
-// Neutral Colors
+
 export const NEUTRAL_WHITE = "#fafafa";
 export const NEUTRAL_OFF_WHITE = "#f5f5f5";
 export const NEUTRAL_LIGHT_GRAY = "#e5e5e5";
@@ -14,7 +14,7 @@ export const NEUTRAL_ALMOST_BLACK = "#262626";
 export const NEUTRAL_NEAR_BLACK = "#171717";
 export const NEUTRAL_BLACK = "#0a0a0a";
 
-// Gray Colors
+
 export const GRAY_PALEST = "#f9fafb";
 export const GRAY_PALER = "#f3f4f6";
 export const GRAY_LIGHT = "#e5e7eb";
@@ -27,7 +27,7 @@ export const GRAY_DEEPER = "#1f2937";
 export const GRAY_ALMOST_BLACK = "#111827";
 export const GRAY_BLACK = "#030712";
 
-// Cyan Colors
+
 export const CYAN_LIGHTEST = "#ecfeff";
 export const CYAN_LIGHTER = "#cffafe";
 export const CYAN_LIGHT = "#a5f3fc";
@@ -40,7 +40,7 @@ export const CYAN_DEEPER = "#155e75";
 export const CYAN_DARKEST = "#164e63";
 export const CYAN_BLACKISH = "#083344";
 
-// Blue Colors
+
 export const BLUE_LIGHTEST = "#eff6ff";
 export const BLUE_LIGHTER = "#dbeafe";
 export const BLUE_LIGHT = "#bfdbfe";
@@ -53,7 +53,7 @@ export const BLUE_DEEPER = "#1e40af";
 export const BLUE_DARKEST = "#1e3a8a";
 export const BLUE_BLACKISH = "#172554";
 
-// Lime Colors
+
 export const LIME_LIGHTEST = "#f7fee7";
 export const LIME_LIGHTER = "#ecfccb";
 export const LIME_LIGHT = "#d9f99d";
@@ -66,7 +66,7 @@ export const LIME_DEEPER = "#3f6212";
 export const LIME_DARKEST = "#365314";
 export const LIME_BLACKISH = "#1a2e05";
 
-// Amber Colors
+
 export const AMBER_LIGHTEST = "#fffbeb";
 export const AMBER_LIGHTER = "#fef3c7";
 export const AMBER_LIGHT = "#fde68a";
@@ -79,7 +79,7 @@ export const AMBER_DEEPER = "#92400e";
 export const AMBER_DARKEST = "#78350f";
 export const AMBER_BLACKISH = "#451a03";
 
-// Orange Colors
+
 export const ORANGE_LIGHTEST = "#fff7ed";
 export const ORANGE_LIGHTER = "#ffedd5";
 export const ORANGE_LIGHT = "#fed7aa";
@@ -92,7 +92,6 @@ export const ORANGE_DEEPER = "#9a3412";
 export const ORANGE_DARKEST = "#7c2d12";
 export const ORANGE_BLACKISH = "#431407";
 
-// Red Colors
 export const RED_LIGHTEST = "#fef2f2";
 export const RED_LIGHTER = "#fee2e2";
 export const RED_LIGHT = "#fecaca";
