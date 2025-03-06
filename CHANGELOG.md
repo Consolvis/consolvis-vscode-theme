@@ -1,5 +1,13 @@
 # consolvis-vscode-theme
 
+## 1.0.1
+
+### Patch Changes
+
+- [`e8fd31f`](https://github.com/Consolvis/consolvis-vscode-theme/commit/e8fd31f8aa29fd886a37bf4dfcb32c37724c3530) Thanks [@tsteckenborn](https://github.com/tsteckenborn)! - Adjusts visibiliy of focus border
+
+- [`e8fd31f`](https://github.com/Consolvis/consolvis-vscode-theme/commit/e8fd31f8aa29fd886a37bf4dfcb32c37724c3530) Thanks [@tsteckenborn](https://github.com/tsteckenborn)! - Adjusts for better visibility in diff editor
+
 ## 1.0.0
 
 ### Major Changes
