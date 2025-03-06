@@ -506,11 +506,11 @@ const darkTheme = {
 
 		// Colors for diff editor
 		"diffEditor.diagonalFill": colors.GRAY_DEEP,
-		"diffEditor.insertedTextBackground": transparency.halfwayTransparent(
+		"diffEditor.insertedTextBackground": transparency.quarterTransparent(
 			colors.LIME_MEDIUM_LIGHT,
 		),
 
-		"diffEditor.removedTextBackground": transparency.halfwayTransparent(
+		"diffEditor.removedTextBackground": transparency.quarterTransparent(
 			colors.RED_MEDIUM_LIGHT,
 		),
 
