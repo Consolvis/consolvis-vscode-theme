@@ -2,7 +2,7 @@
 	"name": "consolvis-vscode-theme",
 	"displayName": "Consolvis Dark Theme",
 	"description": "Our dark theme with orange accents",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"publisher": "Consolvis",
 	"author": "Tobias Steckenborn <tobias.steckenborn@consolvis.de> (https://consolvis.de)",
 	"icon": "./assets/consolvis_logo_dark.png",
